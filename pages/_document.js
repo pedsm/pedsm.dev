@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Navbar from '../components/navbar'
 
 export default class extends Document {
   static async getInitialProps(ctx) {
@@ -10,15 +11,15 @@ export default class extends Document {
     return (
       <Html>
         <Head>
-          <meta charSet="utf-8"/>
-          <link href="styles/main.css" rel="stylesheet"/>
-          <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-          <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          <meta charSet="utf-8" />
+          <link href="styles/main.css" rel="stylesheet" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <body>
           <Main />
-          <NextScript />
         </body>
+        <NextScript />
       </Html>
     )
   }
