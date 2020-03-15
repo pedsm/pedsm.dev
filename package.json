@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "node-sass sass/main.scss public/styles/main.css",
+    "build": "next build",
     "dev": "next dev",
     "start": "next"
   },
