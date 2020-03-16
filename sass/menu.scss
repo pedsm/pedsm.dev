@@ -1,0 +1,25 @@
+$black: black !default;
+$link: black !default;
+$link-hover: black !default;
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.menu-item {
+  padding: 0px 10px;
+  margin: 10px 2px;
+  // border-bottom: $black 2px solid;
+  font-weight: normal;
+
+  a {
+    color: $black;
+  }
+
+  &:hover {
+    border-color: $black;
+  }
+}

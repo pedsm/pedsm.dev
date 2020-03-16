@@ -11,12 +11,16 @@ export default function Navbar() {
         </h1>
       </div>
       <div className="level-right">
-        <div className="level-item">
-          <Link href="/"><a className="is-size-5 has-text-weight-bold">Home</a></Link>
-        </div>
-        <div className="level-item">
-          <Link href="/about"><a className="is-size-5 has-text-weight-bold">About</a></Link>
-
+        <div style={{ justifyContent: 'space-around' }} className="level-item">
+          <div className="menu-item">
+            <Link href="/"><a className="is-size-5">Home</a></Link>
+          </div>
+          <div className="menu-item">
+            <Link href="/projects"><a className="is-size-5">Projects</a></Link>
+          </div>
+          <div className="menu-item">
+            <Link href="/about"><a className="is-size-5">About</a></Link>
+          </div>
         </div>
       </div>
     </nav>

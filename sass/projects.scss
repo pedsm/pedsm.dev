@@ -1,0 +1,53 @@
+$primary: black !default;
+$white: white !default;
+
+.project {
+  padding: 30px 20px 0 20px;
+  background-color: $primary;
+  color: $white;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  
+  img {
+    padding: 0;
+    margin-right: 20px;
+    width: 50%;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    max-height: 300px;
+    object-position: 0% 0%;
+  }
+
+  a {
+    color: $white;
+    font-weight: 700;
+    &:hover {
+      color: darken($white, 10%);
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0px 5px #ddd;
+    transition-duration: 0.2s;
+    background-color: lighten($primary, 2%);
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .project { 
+    padding: 0px;
+    flex-direction: column;
+
+    img {
+      padding: 0;
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .info {
+      padding: 20px;
+    }
+  }
+}

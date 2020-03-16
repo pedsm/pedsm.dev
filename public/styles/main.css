@@ -1,4 +1,60 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700,900&display=swap");
+body {
+  max-width: 800px;
+  margin: auto !important; }
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%; }
+
+.menu-item {
+  padding: 0px 10px;
+  margin: 10px 2px;
+  font-weight: normal; }
+  .menu-item a {
+    color: #111; }
+  .menu-item:hover {
+    border-color: #111; }
+
+.project {
+  padding: 30px 20px 0 20px;
+  background-color: #70a1ff;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  margin-bottom: 50px; }
+  .project img {
+    padding: 0;
+    margin-right: 20px;
+    width: 50%;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    max-height: 300px;
+    object-position: 0% 0%; }
+  .project a {
+    color: white;
+    font-weight: 700; }
+    .project a:hover {
+      color: #e6e6e6; }
+  .project:hover {
+    box-shadow: 0 0px 5px #ddd;
+    transition-duration: 0.2s;
+    background-color: #7aa8ff; }
+
+@media only screen and (max-width: 700px) {
+  .project {
+    padding: 0px;
+    flex-direction: column; }
+    .project img {
+      padding: 0;
+      width: 100%;
+      border-radius: 10px 10px 0 0; }
+    .project .info {
+      padding: 20px; } }
+
 /*! bulma.io v0.8.0 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {

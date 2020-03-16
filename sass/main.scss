@@ -1,7 +1,7 @@
 @charset "utf-8";
 // @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 // TODO verity the font weights
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700,900&display=swap');
 
 // Colour palette
 $blue: #70a1ff;
@@ -23,4 +23,11 @@ $footer-background-color: white;
 
 $gap: 580px;
 
+body {
+  max-width: 800px;
+  margin: auto !important;
+}
+
+@import "./menu.scss";
+@import "./projects.scss";
 @import "../node_modules/bulma/bulma.sass";
