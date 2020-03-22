@@ -29,7 +29,6 @@ $white: white !default;
   }
 
   &:hover {
-    box-shadow: 0 0px 5px #ddd;
     transition-duration: 0.2s;
     background-color: lighten($primary, 2%);
   }

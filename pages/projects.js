@@ -1,18 +1,5 @@
-const projects = [
-  {
-    name: "iemanja",
-    github: "https://github.com/pedsm/iemanja",
-    description: "A desktop mermaid editor",
-    img: "https://raw.githubusercontent.com/pedsm/iemanja/master/.github/iemanja1.png",
-  },
-  {
-    name: "Safe postcode",
-    github: "https://github.com/pedsm/safePostcode",
-    description: "Is my postcode safe?",
-    env:"https://safepostcode.pedsm.now.sh/",
-    img: "https://github.com/pedsm/safePostcode/raw/master/.github/safepostcode.png",
-  }
-]
+import projects from '../projects'
+
 export default function Projects() {
   return (
     <section className="section">

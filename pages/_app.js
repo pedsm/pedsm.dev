@@ -1,4 +1,3 @@
-import App from 'next/app'
 import Navbar from '../components/navbar'
 import { Fragment } from 'react'
 

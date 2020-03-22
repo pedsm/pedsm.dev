@@ -1,3 +1,4 @@
+$white: white !default;
 $black: black !default;
 $link: black !default;
 $link-hover: black !default;
@@ -10,16 +11,17 @@ $link-hover: black !default;
 }
 
 .menu-item {
-  padding: 0px 10px;
-  margin: 10px 2px;
-  // border-bottom: $black 2px solid;
+  padding-bottom: 2px;
+  margin: 10px 10px;
   font-weight: normal;
 
   a {
-    color: $black;
-  }
-
-  &:hover {
-    border-color: $black;
+    &:hover {
+      border-bottom: $white 2px solid;
+    }
+    &.is-active {
+      color:white;
+      border-bottom: $white 2px solid;
+    }
   }
 }

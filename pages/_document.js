@@ -1,3 +1,4 @@
+import projects from '../projects'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import Navbar from '../components/navbar'
 
@@ -11,6 +12,9 @@ export default class extends Document {
     return (
       <Html>
         <Head>
+          {projects.map((proj) => (
+            <link rel="preload" href={proj.img} as="image" />
+          ))}
           <meta charSet="utf-8" />
           <link href="styles/main.css" rel="stylesheet" />
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />

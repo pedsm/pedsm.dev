@@ -4,28 +4,37 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700,900&display=swap');
 
 // Colour palette
-$blue: #70a1ff;
+$blue: #487eb0;
 $dark-blue: #1e90ff;
-$black: #111;
+// $black: #111;
+$black: black;
 $purple: #B33771;
 $dark-purple: #6D214F;
-$grey: #eee;
+$grey: #808080;
+$white: white;
 
 // Bulma overwrite
 $family-sans-serif: "Nunito", sans-serif;
 $grey-dark: $black;
 $grey-light: $grey;
-$primary: $blue;
-$link: $blue;
-$link-hover: $dark-blue;
-
-$footer-background-color: white;
+// $primary: hsla(266, 56%, 50%, 1);
+$primary: $white;
+$text-strong: $white;
+$link: $grey;
+$link-hover: $white;
+$body-color: $white;
+$body-background-color: $black;
+$footer-background-color: $black;
 
 $gap: 580px;
 
 body {
   max-width: 800px;
   margin: auto !important;
+}
+
+a {
+  font-weight: 600;
 }
 
 @import "./menu.scss";
