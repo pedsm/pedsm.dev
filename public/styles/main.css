@@ -15,6 +15,10 @@ a {
   font-weight: 600; }
   a:hover {
     color: white; }
+  a i {
+    color: #808080; }
+    a i:hover {
+      color: white; }
 
 h1 {
   font-size: 2em; }
@@ -99,3 +103,9 @@ section {
 
 footer {
   text-align: center; }
+
+.level {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly; }

@@ -25,7 +25,7 @@ $mid: grey !default;
       border-bottom: $white 2px solid;
     }
     &.is-active {
-      color:white;
+      color:$text;
       border-bottom: $white 2px solid;
     }
   }

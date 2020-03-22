@@ -9,10 +9,10 @@ const links = [
     path: '/projects', 
     name: 'Projects'
   }, 
-  // {
-  //   path: '/about', 
-  //   name: 'About'
-  // }
+  {
+    path: '/about', 
+    name: 'About'
+  }
 ]
 
 export default function Navbar() {

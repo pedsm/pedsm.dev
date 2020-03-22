@@ -15,6 +15,12 @@ a {
   &:hover {
     color: white;
   }
+  i {
+    color: $mid;
+    &:hover {
+      color: $text;
+    }
+  }
 }
 
 h1 {
