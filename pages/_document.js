@@ -16,6 +16,7 @@ export default class extends Document {
           {projects.map((proj, i) => (
             <link key={i} rel="preload" href={proj.img} as="image" />
           ))}
+          <meta name=" theme-color" content="#000000"/>
           <meta charSet="utf-8" />
           <link href="styles/main.css" rel="stylesheet" />
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
