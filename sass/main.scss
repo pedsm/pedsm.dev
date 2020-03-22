@@ -14,29 +14,19 @@ $grey: #808080;
 $white: white;
 
 // Bulma overwrite
-$family-sans-serif: "Nunito", sans-serif;
-$grey-dark: $black;
-$grey-light: $grey;
-// $primary: hsla(266, 56%, 50%, 1);
-$primary: $white;
-$text-strong: $white;
-$link: $grey;
-$link-hover: $white;
-$body-color: $white;
-$body-background-color: $black;
-$footer-background-color: $black;
-
-$gap: 580px;
+$font-family: "Nunito", sans-serif;
+$bg: $black;
+$mid: $grey;
+$text: white;
 
 body {
+  background-color: $bg;
   max-width: 800px;
   margin: auto !important;
 }
 
-a {
-  font-weight: 600;
-}
 
+@import "./typography.scss";
 @import "./menu.scss";
 @import "./projects.scss";
-@import "../node_modules/bulma/bulma.sass";
+@import "./layout.scss";

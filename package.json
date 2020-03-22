@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass --watch sass/main.scss public/styles/main.css",
+    "sass": "node-sass --source-maps --watch sass/main.scss public/styles/main.css",
     "prebuild": "node-sass sass/main.scss public/styles/main.css",
     "build": "next build",
     "dev": "next dev",
@@ -28,7 +28,6 @@
     "react-dom": "^16.13.0"
   },
   "devDependencies": {
-    "bulma": "^0.8.0",
     "node-sass": "^4.13.1"
   }
 }

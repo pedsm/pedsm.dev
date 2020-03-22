@@ -12,8 +12,9 @@ export default class extends Document {
     return (
       <Html>
         <Head>
-          {projects.map((proj) => (
-            <link rel="preload" href={proj.img} as="image" />
+          <meta name="Description" content="Hi I am Pedro and this is my personal page, a home for all my work"/>
+          {projects.map((proj, i) => (
+            <link key={i} rel="preload" href={proj.img} as="image" />
           ))}
           <meta charSet="utf-8" />
           <link href="styles/main.css" rel="stylesheet" />

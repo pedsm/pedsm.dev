@@ -19,20 +19,20 @@ export default function Navbar() {
   const router = useRouter()
 
   return (
-    <nav className="level">
-      <div className="level-left">
-        <h1 className="is-size-3">
+    <nav className="menu">
+      <div>
+        <h1>
           <Link href="/">
             <a>pedsm.dev{router.pathname}</a>
           </Link>
         </h1>
       </div>
-      <div className="level-right">
-        <div style={{ justifyContent: 'space-around' }} className="level-item">
-          {links.map(link => (
-            <div className="menu-item">
+      <div>
+        <div style={{ justifyContent: 'space-around' }} className="links">
+          {links.map((link, i) => (
+            <div key={i} className="menu-item">
               <Link href={link.path}>
-                <a className={`is-size-5${router.pathname === link.path ? ' is-active': ''}`}>
+                <a className={`${router.pathname === link.path ? ' is-active': ''}`}>
                   {link.name}
                 </a>
               </Link>

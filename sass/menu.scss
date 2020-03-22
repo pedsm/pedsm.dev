@@ -1,13 +1,17 @@
-$white: white !default;
-$black: black !default;
-$link: black !default;
-$link-hover: black !default;
+$text: black !default;
+$bg: white !default;
+$mid: grey !default;
 
 .menu {
   display: flex;
+  align-items: center;
   flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
+  justify-content: space-between;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
 }
 
 .menu-item {
@@ -16,6 +20,7 @@ $link-hover: black !default;
   font-weight: normal;
 
   a {
+    text-decoration: none;
     &:hover {
       border-bottom: $white 2px solid;
     }
@@ -23,5 +28,11 @@ $link-hover: black !default;
       color:white;
       border-bottom: $white 2px solid;
     }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .menu {
+    flex-direction: column;
   }
 }
