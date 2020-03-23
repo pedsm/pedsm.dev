@@ -1,9 +1,13 @@
+import Head from 'next/head'
 import Navbar from '../components/navbar'
 import { Fragment } from 'react'
 
 export default function app({ Component, pageProps }) {
   return (
     <Fragment>
+      <Head>
+        <title>pedsm.dev</title>
+      </Head>
       <section className="section">
         <Navbar />
         <Component {...pageProps} />
