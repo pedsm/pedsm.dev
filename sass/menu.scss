@@ -22,11 +22,11 @@ $mid: grey !default;
   a {
     text-decoration: none;
     &:hover {
-      border-bottom: $white 2px solid;
+      border-bottom: $text 2px solid;
     }
     &.is-active {
       color:$text;
-      border-bottom: $white 2px solid;
+      border-bottom: $text 2px solid;
     }
   }
 }

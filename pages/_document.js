@@ -24,7 +24,8 @@ export default class extends Document {
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
           <link rel="manifest" href="/site.webmanifest"></link>
-          <link href="styles/main.css" rel="stylesheet" />
+          {/* <link href="styles/main.css" rel="stylesheet" /> */}
+          <link href="styles/light.css" rel="stylesheet" />
           <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet" />
         </Head>
         <body>
