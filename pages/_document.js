@@ -10,7 +10,7 @@ export default class extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <meta name="Description" content="Hi I am Pedro and this is my personal page, a home for all my work"/>
           {projects.map((proj, i) => (
