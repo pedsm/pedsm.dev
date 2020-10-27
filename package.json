@@ -5,8 +5,6 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass --source-maps --watch sass/main.scss public/styles/main.css",
-    "prebuild": "node-sass sass/main.scss public/styles/main.css && node-sass sass/light.scss public/styles/light.css",
     "build": "next build",
     "dev": "next dev",
     "start": "next"
