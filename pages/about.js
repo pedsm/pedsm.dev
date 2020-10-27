@@ -24,14 +24,16 @@ const platforms = [
 export default function About() {
   return (
     <section>
-      <h2>About</h2>
-      <p>You can find more of my work in the following platforms</p>
-      <br></br>
-      <br></br>
-      <div className="level">
-        {platforms.map((plat, i) => (
-          <a key={i} href={plat.link}><i className={`fab fa-2x ${plat.icon}`}></i></a>
-        ))}
+      <div className="content">
+        <h2>About</h2>
+        <p>You can find more of my work in the following platforms</p>
+        <br></br>
+        <br></br>
+        <div className="level">
+          {platforms.map((plat, i) => (
+            <a key={i} href={plat.link}><i className={`fab fa-2x ${plat.icon}`}></i></a>
+          ))}
+        </div>
       </div>
     </section>
   )

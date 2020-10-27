@@ -2,17 +2,65 @@
 // TODO verity the font weights
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,500,600,700,900&display=swap');
 
-$grey: #808080;
+$font-family: "Open sans", "Nunito", sans-serif;
+:root {
+  --bg: white;
+  --mid: #808080;
+  --text: #101010;
+  --off-white: #f5f5f5ff;
+  --off-bg: #ddd8e8ff;
+  --purpleish: #b7adcfff;
+  --cyber-grape: #5b4b81ff;
+  --off-black: #1b1627;
+}
 
-$font-family: "Nunito", sans-serif;
-$bg: black;
-$mid: $grey;
-$text: white;
+.dark-theme {
+  --bg: #101010;
+  --mid: #606060;
+  --text: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 
 body {
-  background-color: $bg;
-  max-width: 800px;
-  margin: auto !important;
+  background-color: var(--bg);
+  margin: 0;
+}
+
+header {
+  padding: 1em;
+}
+
+section {
+  min-height: 60vh;
+}
+
+.main {
+  background-color: var(--off-bg);
+  color: var(--cyber-grape);
+  padding-top: 6em;
+  font-weight: 300;
+}
+
+.content {
+  width: 800px;
+  margin: auto;
+
+}
+
+.footer {
+  color: white;
+  padding: 3em;
+  font-weight: bold;
+  background-color: var(--off-black);
+  box-shadow: 0 50vh 0 50vh var(--off-black);
+}
+
+.footer > .content > p {
+  color: white
 }
 
 

@@ -1,57 +1,52 @@
-$bg: black !default;
-$text: white !default;
-$mid: grey !default;
-
 .project {
-  margin-bottom: 2em;
-  border-radius: 12px;
-  border: $mid 2px solid;
-  display: grid;
-  grid-template-columns: 300px auto;
-  grid-template-areas: 
-     "img info"
-     "img info"
-     "img buttons";
+  // background-color: #f3f3f3;
+  // grid-template-columns: 300px auto;
+  // margin-bottom: 1em;
+  // display: grid;
+  // grid-template-areas: 
+  //    "img info"
+  //    "img info"
+  //    "img buttons";
 
-  .info {
-    box-sizing: border-box;
-    padding: 0 1em;
-    grid-area: "info";
-    bottom: 10px;
-    width: 100%;
-    .links {
-      margin: 1em;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-    }
-  }
+  // .info {
+  //   box-sizing: border-box;
+  //   padding: 0 1em;
+  //   grid-area: "info";
+  //   bottom: 10px;
+  //   width: 100%;
+  //   .links {
+  //     margin: 1em;
+  //     display: flex;
+  //     flex-direction: row;
+  //     justify-content: space-evenly;
+  //   }
+  // }
   
   img {
-    grid-area: "img";
-    width: 300px;
-    object-fit: cover;
-    object-position: 0% 0%;
-    border-radius: 10px 0 0 10px;
+    // grid-area: "img";
+    // width: 300px;
+    // object-fit: cover;
+    // object-position: 0% 0%;
+    // border-radius: 10px 0 0 10px;
   }
 
   &:hover {
-    border-color: $text; 
+    border-color: var(--text); 
   }
 }
 
-@media only screen and (max-width: 700px) {
-  .project { 
-    display: block;
 
-    img {
-      padding: 0;
-      width: 100%;
-      border-radius: 10px 10px 0 0;
-    }
+// @media only screen and (max-width: 700px) {
+//   .project { 
+//     display: block;
 
-    .info {
-      padding: 0 10px;
-    }
-  }
-}
+//     img {
+//       padding: 0;
+//       width: 100%;
+//     }
+
+//     .info {
+//       padding: 0 10px;
+//     }
+//   }
+// }

@@ -1,7 +1,3 @@
-$text: black !default;
-$bg: white !default;
-$mid: grey !default;
-
 .menu {
   display: flex;
   align-items: center;
@@ -22,11 +18,11 @@ $mid: grey !default;
   a {
     text-decoration: none;
     &:hover {
-      border-bottom: $text 2px solid;
+      border-bottom: var(--text) 2px solid;
     }
     &.is-active {
-      color:$text;
-      border-bottom: $text 2px solid;
+      color: var(--text);
+      border-bottom: var(--text) 2px solid;
     }
   }
 }
