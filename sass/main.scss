@@ -46,25 +46,16 @@ section {
 }
 
 .content {
-  width: 800px;
+  max-width: 800px;
   margin: auto;
 
 }
 
-.footer {
-  color: white;
-  padding: 3em;
-  font-weight: bold;
-  background-color: var(--off-black);
-  box-shadow: 0 50vh 0 50vh var(--off-black);
-}
-
-.footer > .content > p {
-  color: white
-}
 
 
 @import "./typography.scss";
 @import "./menu.scss";
 @import "./projects.scss";
 @import "./layout.scss";
+@import "./tags.scss";
+@import "./footer.scss";

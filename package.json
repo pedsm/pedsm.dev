@@ -23,11 +23,10 @@
   },
   "homepage": "https://github.com/pedsm/pedsm.dev#readme",
   "dependencies": {
-    "next": "^9.3.0",
+    "next": "^10.0.0",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "sass": "^1.27.0"
   },
-  "devDependencies": {
-    "node-sass": "^4.13.1"
-  }
+  "devDependencies": {}
 }

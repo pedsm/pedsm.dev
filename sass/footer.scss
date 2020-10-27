@@ -1,0 +1,19 @@
+.footer {
+  color: white;
+  padding: 3em;
+  font-weight: bold;
+  background-color: var(--off-black);
+  box-shadow: 0 50vh 0 50vh var(--off-black);
+  .content {
+    p {
+      font-weight: 400;
+      color: var(--off-bg);
+    }
+    a {
+      color: white;
+      &:hover {
+        color: var(--purpleish);
+      }
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import Tag from './tag'
 import projects from '../projects'
 
 export default function Projects() {
@@ -5,9 +6,9 @@ export default function Projects() {
     <section className="section">
       <div className="content">
         <h2>Projects</h2>
+        <div className="projects">
         {projects.map((proj, i) => (
           <article className="project" key={i}>
-            <img src={proj.img} height="200px"></img>
             <div className="info">
               <h3>{proj.name}</h3>
               <p>{proj.description}</p>
@@ -15,9 +16,11 @@ export default function Projects() {
                 {proj.env ? <a href={proj.env}>Try it</a> : ''}
                 <a href={proj.github}>GitHub</a>
               </div>
+              {proj.tags.map(tag => (<Tag tag={tag}/>))}
             </div>
           </article>
         ))}
+        </div>
       </div>
     </section>
   )
