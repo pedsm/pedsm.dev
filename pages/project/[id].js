@@ -34,18 +34,19 @@ export function getStaticPaths() {
     paths: projects.map(proj => ({
       params: { id: proj.id }
     })),
-    fallback: true,
+    fallback: false,
   }
   return routes
 }
 
 export async function getStaticProps(context) {
   const { id } = context.params
+  console.log('Buidling:', id)
+
   const project = projects.find(proj => proj.id == id)
   const res = await fetch(`https://raw.githubusercontent.com/pedsm/${id}/master/README.md`)
   const md = await res.text()
   const repo = await getRepo(id)
-  console.log(repo)
 
   return {
     props: {
