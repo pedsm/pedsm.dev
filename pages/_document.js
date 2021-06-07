@@ -18,6 +18,12 @@ export default class extends Document {
           <link rel="manifest" href="/site.webmanifest"></link>
           <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet" />
           <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+          <meta name="Description" content="Hi I am Pedro and this is my personal page, a home for all my work"/>
+          <meta name="theme-color" content="#000000"/>
+          <meta charSet="utf-8" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>pedsm.dev</title>
         </Head>
         <Main />
         <NextScript />

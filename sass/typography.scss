@@ -1,42 +1,33 @@
-$font-family: "Nunito", sans-serif !default;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
 
 * {
-  font-family: $font-family;
-  // color: var(--text);
-  // font-weight: 300;
+  color: #ccc;
 }
 
-a {
-  text-decoration: none;
-  color: var(--mid);
+body {
+  font-size: 18px;
+  font-family: Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Nunito', sans-serif;
+  color:white;
   font-weight: 600;
-  &:hover {
-    color: var(--text);
-  }
-  i {
-    color: var(--mid);
-    &:hover {
-      color: var(--text);
-    }
-  }
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 24px;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 36px;
 }
 
-h3 {
-  font-size: 1.5em;
+p {
+  font-weight: 400;
 }
 
-h5 {
-  font-size: 1.25em;
-}
-
-h5 {
-  font-size: 1.2em;
+a {
+  font-family: 'Nunito';
 }

@@ -1,5 +1,6 @@
   [
     {
+      "id": "pl-poker",
       "name": "pl-poker",
       "github": "https://github.com/pedsm/planning-poker",
       "description": "Online no setup planning (scrum) poker",
@@ -8,6 +9,7 @@
       "tags": ["oss", "web"]
     },
     {
+      "id": "iemanja",
       "name": "iemanja",
       "github": "https://github.com/pedsm/iemanja",
       "description": "A desktop mermaid editor",
@@ -15,6 +17,7 @@
       "tags": ["oss", "desktop"]
     },
     {
+      "id": "safePostcode",
       "name": "Safe postcode",
       "github": "https://github.com/pedsm/safePostcode",
       "description": "Is my postcode safe?",

@@ -9,7 +9,7 @@ export default function Home() {
         <p>Currently based in Birmingham, UK 🇬🇧</p>
       </div>
     </section>
-    <Projects />
+    {/* <Projects /> */}
     </>
   )
 }
