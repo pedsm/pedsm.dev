@@ -3,6 +3,12 @@
     justify-content: space-between;
 }
 
+@media only screen and (max-width: 800px) {
+  .menu {
+    flex-direction: column;
+  }
+}
+
 .menu > div {
     margin: auto 0;
 }

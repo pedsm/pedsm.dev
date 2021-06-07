@@ -4,6 +4,12 @@
   gap: 24px;
 }
 
+@media only screen and (max-width: 800px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}
+
 .project {
   border: 1px #888 solid;
   border-radius: 5px;
