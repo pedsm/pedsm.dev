@@ -1,65 +1,58 @@
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
 import marked from 'marked'
 import Title from '/components/title'
-import Skeleton from '../../components/skeleton'
+import { getRepo } from '/client/github'
 import projects from '../../projects.json'
 
-async function fetchMarkdown(url) {
-  const res = await fetch(url)
-  return res.text()
-}
 
-function LoadingPage() {
+export default function ProjectView({ md, project, repo }) {
   return (
-    <>
-      <>Loading...</>
-      <Skeleton height={49} />
-      <Skeleton height={18} />
-      <Skeleton height={18} />
-    </>
-  )
-}
+    <section className="section">
+      <Title>{project.id}</Title>
+      <div className="right-data">
+        <p>
+          <i className={`fas fa-star`}></i>
+          {' '}
+          {repo.stargazers_count}
+          {' '}
+          <i className={`fas fas fa-exclamation-circle`}></i>
+          {' '}
+          {repo.open_issues_count}
+        </p>
+      </div>
 
-export default function ProjectView() {
-  const [md, setMd] = useState()
-
-  const router = useRouter()
-  const { id } = router.query
-
-  const project = projects.find(proj => proj.id === id)
-  useEffect(() => {
-    if (id == null) {
-      return
-    }
-    fetchMarkdown(`https://raw.githubusercontent.com/pedsm/${id}/master/README.md`)
-      .then((m) => setMd(m))
-      .catch(console.error)
-  }, [id])
-
-  if (id == null) {
-    return <section className="section">
-      <LoadingPage></LoadingPage>
+      <div className="ghContent" dangerouslySetInnerHTML={{
+        __html: marked(md, {
+          baseUrl: project.github + '/raw/master/',
+        })
+      }}></div>
     </section>
-  }
-
-
-  return (
-    <>
-      <section className="section">
-        {md == null
-          ? (<LoadingPage></LoadingPage>)
-          : (
-            <>
-              <Title>{project.id}</Title>
-              <div className="ghContent" dangerouslySetInnerHTML={{
-                __html: marked(md, {
-                  baseUrl: project.github + '/raw/master/'
-                })
-              }}></div>
-            </>
-          )}
-      </section>
-    </>
   )
+}
+
+export function getStaticPaths() {
+  const routes = {
+    paths: projects.map(proj => ({
+      params: { id: proj.id }
+    })),
+    fallback: true,
+  }
+  return routes
+}
+
+export async function getStaticProps(context) {
+  const { id } = context.params
+  const project = projects.find(proj => proj.id == id)
+  const res = await fetch(`https://raw.githubusercontent.com/pedsm/${id}/master/README.md`)
+  const md = await res.text()
+  const repo = await getRepo(id)
+  console.log(repo)
+
+  return {
+    props: {
+      md,
+      project,
+      repo,
+      baseUrl: project.github + '/raw/master/'
+    }
+  }
 }

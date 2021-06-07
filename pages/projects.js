@@ -1,10 +1,11 @@
-import Head from 'next/head'
 import Title from '/components/title'
-import projects from '../projects'
-import Tag from '../components/tag'
+import Tag from '/components/tag'
+import { getRepo } from '/client/github'
 import Link from 'next/link'
 
-export default function Projects() {
+import projJson from '../projects'
+
+export default function Projects({ projects }) {
   return (
     <>
       <Title>Projects</Title>
@@ -14,15 +15,18 @@ export default function Projects() {
           <div className="projects">
             {projects.map((proj, i) => (
               <article className="project" key={i}>
+                <div className="right-data">
+                  <i className="fas fa-star"></i> {proj.stargazers_count}
+                </div>
                 <h3>
-                  <Link href={`/project/${proj.id}`}>{proj.name}</Link>
+                  <Link href={`/project/${proj.name}`}>{proj.name}</Link>
                   {' '}
-                  {proj.tags.map((tag, i) => (<Tag key={i} tag={tag} />))}
+                  {/* {proj.tags.map((tag, i) => (<Tag key={i} tag={tag} />))} */}
                 </h3>
                 <p>{proj.description}</p>
                 <div className="links">
                   {proj.env ? <a href={proj.env}>Try it</a> : ''}
-                  <a href={proj.github}>GitHub</a>
+                  <a href={proj.html_url}>GitHub</a>
                 </div>
               </article>
             ))}
@@ -31,4 +35,21 @@ export default function Projects() {
       </section>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const repos = await Promise.all(
+    projJson.map(async (repo) => {
+      const ghRepo = await getRepo(repo.id)
+      return {
+        repo,
+        ...ghRepo
+      }
+    })
+  )
+  return {
+    props: {
+      projects: repos
+    }
+  }
 }
