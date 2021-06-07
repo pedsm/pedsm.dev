@@ -1,10 +1,14 @@
 import projects from '../projects'
+import Head from 'next/head'
 import Tag from '../components/tag'
 import Link from 'next/link'
 
 export default function Projects() {
   return (
     <>
+      <Head>
+        <title>Projects - pedsm.dev</title>
+      </Head>
       <section className="section">
         <div className="content">
           <h2>Projects</h2>
@@ -12,10 +16,7 @@ export default function Projects() {
             {projects.map((proj, i) => (
               <article className="project" key={i}>
                 <h3>
-                  <Link href={{
-                    pathname: 'project/[id]',
-                    query: { id: proj.id }
-                  }}>{proj.name}</Link>
+                  <Link href={`/project/${proj.id}`}>{proj.name}</Link>
                   {' '}
                   {proj.tags.map((tag, i) => (<Tag key={i} tag={tag} />))}
                 </h3>

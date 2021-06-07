@@ -23,7 +23,7 @@ export default function Navbar() {
     <nav className="menu">
       <div>
         <h1>
-            pedsm.dev{router.pathname}
+            pedsm.dev
         </h1>
       </div>
       <div>

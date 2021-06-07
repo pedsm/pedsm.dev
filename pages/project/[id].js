@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import marked from 'marked'
+import Skeleton from '../../components/skeleton'
 import projects from '../../projects.json'
 
 async function fetchMarkdown(url) {
@@ -8,8 +9,18 @@ async function fetchMarkdown(url) {
   return res.text()
 }
 
+function LoadingPage() {
+  return (
+    <>
+      <Skeleton height={49} />
+      <Skeleton height={18} />
+      <Skeleton height={18} />
+    </>
+  )
+}
+
 export default function ProjectView() {
-  const [md, setMd] = useState(null)
+  const [md, setMd] = useState()
 
   const router = useRouter()
   const { id } = router.query
@@ -17,21 +28,34 @@ export default function ProjectView() {
   const project = projects.find(proj => proj.id === id)
   console.log(project)
   useEffect(() => {
-    fetchMarkdown('https://raw.githubusercontent.com/pedsm/safePostcode/master/README.md')
+    if (id == null) {
+      return
+    }
+    fetchMarkdown(`https://raw.githubusercontent.com/pedsm/${id}/master/README.md`)
       .then((m) => setMd(m))
       .catch(console.error)
-  }, [])
+  }, [id])
+
+  if (id == null) {
+    return <section className="section">
+      <LoadingPage></LoadingPage>
+    </section>
+  }
+
 
 
   return (
     <>
       <section className="section">
-        <h2>{project.name}</h2>
-        {/* <div dangerouslySetInnerHTML={{
-          __html: marked(md, {
-            baseUrl: project.github
-          })
-        }}></div> */}
+        {md == null
+          ? (<LoadingPage></LoadingPage>)
+          : (
+            <div className="ghContent" dangerouslySetInnerHTML={{
+              __html: marked(md, {
+                baseUrl: project.github + '/raw/master/'
+              })
+            }}></div>
+          )}
       </section>
     </>
   )

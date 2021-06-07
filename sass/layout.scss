@@ -2,3 +2,38 @@
     width: 800px;
     margin: auto;
 }
+
+.ghContent {
+  img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  font-family: 'Open sans', sans-serif;
+
+  code {
+    background-color: #444;
+    padding: 2px 4px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: white;
+  }
+
+  pre {
+    margin: 40px 0px;
+    width: 100%;
+    code {
+      display: block;
+      padding: 20px 20px;
+      box-sizing: border-box;
+      width: 100%;
+      overflow-x: scroll;
+    }
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+}
