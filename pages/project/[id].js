@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import marked from 'marked'
+import Title from '/components/title'
 import Skeleton from '../../components/skeleton'
 import projects from '../../projects.json'
 
@@ -12,6 +13,7 @@ async function fetchMarkdown(url) {
 function LoadingPage() {
   return (
     <>
+      <>Loading...</>
       <Skeleton height={49} />
       <Skeleton height={18} />
       <Skeleton height={18} />
@@ -26,7 +28,6 @@ export default function ProjectView() {
   const { id } = router.query
 
   const project = projects.find(proj => proj.id === id)
-  console.log(project)
   useEffect(() => {
     if (id == null) {
       return
@@ -43,18 +44,20 @@ export default function ProjectView() {
   }
 
 
-
   return (
     <>
       <section className="section">
         {md == null
           ? (<LoadingPage></LoadingPage>)
           : (
-            <div className="ghContent" dangerouslySetInnerHTML={{
-              __html: marked(md, {
-                baseUrl: project.github + '/raw/master/'
-              })
-            }}></div>
+            <>
+              <Title>{project.id}</Title>
+              <div className="ghContent" dangerouslySetInnerHTML={{
+                __html: marked(md, {
+                  baseUrl: project.github + '/raw/master/'
+                })
+              }}></div>
+            </>
           )}
       </section>
     </>

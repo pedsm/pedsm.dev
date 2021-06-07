@@ -1,3 +1,5 @@
+import Title from '/components/title'
+
 const platforms = [
   {
     icon: "fa-github",
@@ -24,6 +26,7 @@ const platforms = [
 export default function About() {
   return (
     <section>
+      <Title>About</Title>
       <div className="section">
         <h2>About</h2>
         <p>You can find more of my work in the following platforms</p>

@@ -1,14 +1,13 @@
-import projects from '../projects'
 import Head from 'next/head'
+import Title from '/components/title'
+import projects from '../projects'
 import Tag from '../components/tag'
 import Link from 'next/link'
 
 export default function Projects() {
   return (
     <>
-      <Head>
-        <title>Projects - pedsm.dev</title>
-      </Head>
+      <Title>Projects</Title>
       <section className="section">
         <div className="content">
           <h2>Projects</h2>
