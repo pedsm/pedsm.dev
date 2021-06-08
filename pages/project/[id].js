@@ -3,8 +3,6 @@ import Title from '/components/title'
 import { getRepo } from '/client/github'
 import projects from '../../projects.json'
 
-
-
 export default function ProjectView({ md, project, repo }) {
   const baseUrl = project.github + '/raw/master/'
 
