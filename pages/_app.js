@@ -29,6 +29,7 @@ export default function app({ Component, pageProps }) {
           <meta name="twitter:card" content="summary_large_image"></meta>
           <meta name="twitter:site" content="@pedsm"></meta>
           <meta name="twitter:creatro" content="@pedsm"></meta>
+          <script type="text/javascript" src="startWorker.js"></script>
       </Head>
       <header className="section">
         <Navbar />
