@@ -1,10 +1,13 @@
-import marked from 'marked'
+import marked, { Renderer } from 'marked'
 import Title from '/components/title'
 import { getRepo } from '/client/github'
 import projects from '../../projects.json'
 
 
+
 export default function ProjectView({ md, project, repo }) {
+  const baseUrl = project.github + '/raw/master/'
+
   return (
     <section className="section">
       <Title>{project.id}</Title>
@@ -22,7 +25,8 @@ export default function ProjectView({ md, project, repo }) {
 
       <div className="ghContent" dangerouslySetInnerHTML={{
         __html: marked(md, {
-          baseUrl: project.github + '/raw/master/',
+          baseUrl,
+          gfm: true
         })
       }}></div>
     </section>
