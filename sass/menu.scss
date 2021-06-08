@@ -20,12 +20,12 @@
 .menu-item > a {
     padding-left: 8px;
     text-decoration: none;
-    color: #bbb;
+    color: var(--text);
     &:hover {
-        color:white;
+        color:var(--heading);
     }
 }
 
 a.is-active {
-    color: white;
+    color: var(--heading);
 }

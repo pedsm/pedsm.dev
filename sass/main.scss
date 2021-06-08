@@ -6,9 +6,10 @@
 @import "./footer.scss";
 @import "./skeleton.scss";
 @import "./scrollbar.scss";
+@import "./themes.scss";
 
 body {
-    background-color: black; 
+    background-color: var(--background); 
     margin: 0;
 }
 
@@ -17,9 +18,9 @@ body {
     justify-content: space-between;
     a {
         i {
-            color: #888;
+            color: var(--text);
             &:hover {
-                color: white;
+                color: var(--heading);
             }
         }
     }

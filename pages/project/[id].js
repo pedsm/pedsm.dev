@@ -1,4 +1,4 @@
-import marked, { Renderer } from 'marked'
+import marked from 'marked'
 import Title from '/components/title'
 import { getRepo } from '/client/github'
 import projects from '../../projects.json'

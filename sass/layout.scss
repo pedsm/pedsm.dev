@@ -12,11 +12,11 @@
   font-family: 'Open sans', sans-serif;
 
   code {
-    background-color: #444;
+    background-color: var(--codeBg);
     padding: 2px 4px;
     font-size: 16px;
     border-radius: 5px;
-    color: white;
+    color: var(--heading);
   }
 
   pre {

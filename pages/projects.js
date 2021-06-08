@@ -21,12 +21,12 @@ export default function Projects({ projects }) {
                 <h3>
                   <Link href={`/project/${proj.name}`}>{proj.name}</Link>
                   {' '}
-                  {/* {proj.tags.map((tag, i) => (<Tag key={i} tag={tag} />))} */}
+                  {proj.repo.tags.map((tag, i) => (<Tag key={i} tag={tag} />))}
                 </h3>
                 <p>{proj.description}</p>
                 <div className="links">
                   {proj.env ? <a href={proj.env}>Try it</a> : ''}
-                  <a href={proj.html_url}>GitHub</a>
+                  <a href={proj.html_url}><i className="fab fa-github fa-lg"></i></a>
                 </div>
               </article>
             ))}

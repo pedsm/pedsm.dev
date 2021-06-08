@@ -1,7 +1,8 @@
 .tag {
-  background-color: rgb(34, 34, 34);
+  background-color: var(--text);
+  color: var(--background);
   border-radius: 5px;
-  padding: 6px;
+  padding: 4px;
   margin-right: 8px;
   font-weight: 700;
   text-transform: uppercase;
