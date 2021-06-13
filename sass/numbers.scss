@@ -11,17 +11,24 @@
 }
 
 .stat {
-  background-color: var(--codeBg);
-  color: var(--background);
+  position: relative;
+  border: var(--text) 1px solid;
   border-radius: 5px;
   padding: 12px;
   span {
-    color: var(--background);
+    text-decoration: none;
+    color: var(--heading);
     font-size: 36px;
   }
   p {
     margin: 0px;
     margin-top: 12px;
-    color: var(--background);
+  }
+  .right {
+    text-decoration: none;
+    float: right;
+    position: absolute;
+    top: 12px;
+    right: 12px;
   }
 }

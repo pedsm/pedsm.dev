@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 
-export default function StatRoller({ number, description }) {
+export default function StatRoller({ number, description, url }) {
   const [num, setNum] = useState(0)
   const growRate = number/60;
 
@@ -16,9 +16,12 @@ export default function StatRoller({ number, description }) {
   }, [num, number])
 
   return (
-    <div className="stat">
-      <span>{Math.round(num)}</span>
-      <p>{description}</p>
-    </div>
+    <a className="right" href={url}>
+      <div className="stat">
+        <span>{Math.round(num)}</span>
+        <p>{description}</p>
+        <i className="right fas fa-external-link-alt"></i>
+      </div>
+    </a>
   )
 }
