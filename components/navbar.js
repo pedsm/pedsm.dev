@@ -22,9 +22,11 @@ export default function Navbar() {
   return (
     <nav className="menu">
       <div>
-        <h1>
-            pedsm.dev
-        </h1>
+        <Link href="/">
+          <h1 style={{cursor: 'pointer'}}>
+              pedsm.dev
+          </h1>
+        </Link>
       </div>
       <div>
         <div style={{ justifyContent: 'space-around' }} className="links">
