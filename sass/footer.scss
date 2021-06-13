@@ -1,19 +1,14 @@
 .footer {
   color: white;
-  padding: 3em;
+  padding: 3em 0;
   font-weight: bold;
-  background-color: var(--off-black);
-  box-shadow: 0 50vh 0 50vh var(--off-black);
+  text-align: center;
   .content {
     p {
       font-weight: 400;
-      color: var(--off-bg);
     }
     a {
       color: white;
-      &:hover {
-        color: var(--purpleish);
-      }
     }
   }
 }

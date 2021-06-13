@@ -1,0 +1,31 @@
+.card {
+  position: relative;
+  border: 1px var(--text) solid;
+  border-radius: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+    &:hover {
+    border-color: var(--heading);
+    p {
+      color: var(--heading);
+    }
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  p {
+    margin: 5px 0;
+  }
+
+  .right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .big {
+    font-size: 36px;
+  }
+}

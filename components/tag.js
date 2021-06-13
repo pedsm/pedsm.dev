@@ -1,5 +1,5 @@
 const tagMap = {
-  oss: "Open source",
+  oss: "OSS",
   desktop: "Desktop",
   web: "Web"
 }

@@ -10,7 +10,7 @@ export default function Projects() {
         {projects.map((proj, i) => (
           <article className="project" key={i}>
             <div className="info">
-              <h3>{proj.name}</h3>
+              <h3>{proj.id}</h3>
               <p>{proj.description}</p>
               <div className="links">
                 {proj.env ? <a href={proj.env}>Try it</a> : ''}

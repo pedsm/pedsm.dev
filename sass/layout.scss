@@ -1,14 +1,56 @@
-section {
-  padding: 1em;
+.section {
+    padding: 0 30px;
+    max-width: 800px;
+    margin: auto;
 }
 
-footer {
-  text-align: center;
+.ghContent {
+  img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  font-family: 'Open sans', sans-serif;
+
+  code {
+    background-color: var(--codeBg);
+    padding: 2px 4px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: var(--background);
+  }
+
+  pre {
+    margin: 40px 0px;
+    width: 100%;
+    code {
+      display: block;
+      padding: 20px 20px;
+      box-sizing: border-box;
+      width: 100%;
+      overflow-x: scroll;
+    }
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  table {
+    width: 100%;
+    border: 1px solid var(--text);
+    border-radius: 5px;
+    padding: 12px;
+    border-spacing: 0;
+  }
 }
 
-.level {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-evenly;
+.section {
+  position: relative;
+}
+
+.right-data {
+  position: absolute;
+  right: 30px;
 }
