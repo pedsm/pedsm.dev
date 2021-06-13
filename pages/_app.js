@@ -31,8 +31,9 @@ export default function app({ Component, pageProps }) {
           <meta property="og:image" content="/card.png" />
           <meta property="og:description" content="Hi, I'm Pedro" /> 
           <meta name="twitter:title" content="pedsm.dev" />
-          <meta name="twitter:site" content="@pedsm" />
           <meta name="twitter:description" content="Hi, I'm Pedro" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@pedsm" />
           <meta name="twitter:image" content="/card.png" />
           <meta name="twitter:image:alt" content="Hi" />
           <script type="text/javascript" src="startWorker.js"></script>
