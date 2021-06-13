@@ -30,6 +30,7 @@ export async function getStaticProps(ctx) {
     props: {
       twitter: twitterUser.data,
       repos,
-    }
+    },
+    revalidate: 10,
   }
 }

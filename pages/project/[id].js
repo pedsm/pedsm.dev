@@ -56,6 +56,7 @@ export async function getStaticProps(context) {
       project,
       repo,
       baseUrl: project.github + '/raw/master/'
-    }
+    },
+    revalidate: 10,
   }
 }
