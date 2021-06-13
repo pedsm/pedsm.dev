@@ -14,8 +14,8 @@ export default function numbers({ twitter, repos }) {
       <h2>Numbers</h2>
       <div className="numbers">
         <StatRoller number={starCount} description={'Github Stars'} url="https://github.com/pedsm" />
-        <StatRoller number={repos.length} description={'GitHub Repos'} url="https://github.com/pedsm" />
-        <StatRoller number={twitter.public_metrics.followers_count} description={'Twitter followers'} url="https://twitter.com/pedsm/" />
+        <StatRoller number={repos.length} description={'GitHub Repos'} url="https://github.com/pedsm?tab=repositories" />
+        <StatRoller number={twitter.public_metrics.followers_count} description={'Twitter followers'} url="https://twitter.com/pedsm/followers" />
         <StatRoller number={twitter.public_metrics.tweet_count} description={'Tweets'} url="https://twitter.com/pedsm/" />
       </div>
     </section>

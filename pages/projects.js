@@ -18,12 +18,16 @@ export default function Projects({ projects }) {
                 <div className="right">
                   <i className="fas fa-star"></i> {proj.stargazers_count}
                 </div>
-                <h3>
-                  <Link href={`/project/${proj.name}`}>{proj.name}</Link>
-                  {' '}
-                  {proj.repo.tags.map((tag, i) => (<Tag key={i} tag={tag} />))}
-                </h3>
-                <p>{proj.description}</p>
+                <Link href={`/project/${proj.name}`}>
+                  <div style={{cursor: 'pointer'}}>
+                  <h3>
+                    {proj.name}
+                    {' '}
+                    {proj.repo.tags.map((tag, i) => (<Tag key={i} tag={tag} />))}
+                  </h3>
+                  <p>{proj.description}</p>
+                  </div>
+                </Link>
                 <div className="links">
                   {proj.env ? <a href={proj.env}>Try it</a> : ''}
                   <a href={proj.html_url} target="_blank"><i className="fab fa-github fa-lg"></i></a>
