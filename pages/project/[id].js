@@ -5,6 +5,13 @@ import projects from '../../projects.json'
 
 export default function ProjectView({ md, project, repo }) {
   const baseUrl = project.github + '/raw/master/'
+  marked.use({
+    renderer: {
+      link: (href, title, text) => {
+        return `<a target="_blank" href="${href}">${text}</a>`
+      }
+    }
+  })
 
   return (
     <section className="section">

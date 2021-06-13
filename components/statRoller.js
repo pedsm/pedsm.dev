@@ -16,7 +16,7 @@ export default function StatRoller({ number, description, url }) {
   }, [num, number])
 
   return (
-    <a href={url}>
+    <a target="_blank" href={url}>
       <div className="card">
         <span className="big">{Math.round(num)}</span>
         <p>{description}</p>

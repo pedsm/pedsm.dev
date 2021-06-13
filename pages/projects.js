@@ -26,7 +26,7 @@ export default function Projects({ projects }) {
                 <p>{proj.description}</p>
                 <div className="links">
                   {proj.env ? <a href={proj.env}>Try it</a> : ''}
-                  <a href={proj.html_url}><i className="fab fa-github fa-lg"></i></a>
+                  <a href={proj.html_url} target="_blank"><i className="fab fa-github fa-lg"></i></a>
                 </div>
               </article>
             ))}

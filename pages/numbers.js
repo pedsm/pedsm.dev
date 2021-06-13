@@ -1,6 +1,7 @@
 import { getReposFromUser } from '/client/github'
 import { twitterGet } from '/client/twitter'
 import StatRoller from '/components/statRoller'
+import Title from '/components/title'
 
 export default function numbers({ twitter, repos }) {
   const starCount = repos.reduce((a,b) => {
@@ -9,6 +10,7 @@ export default function numbers({ twitter, repos }) {
 
   return (
     <section className="section">
+      <Title>Numbers</Title>
       <h2>Numbers</h2>
       <div className="numbers">
         <StatRoller number={starCount} description={'Github Stars'} url="https://github.com/pedsm" />

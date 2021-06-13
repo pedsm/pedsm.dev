@@ -29,7 +29,7 @@ export default function about() {
   return (
     <div style={{width: '50%', margin: 'auto'}} className="level">
       {platforms.map((plat, i) => (
-        <a key={i} href={plat.link}><i className={`fab fa-x ${plat.icon}`}></i></a>
+        <a key={i} target="_blank" href={plat.link}><i className={`fab fa-x ${plat.icon}`}></i></a>
       ))}
     </div>
   )
