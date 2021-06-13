@@ -14,8 +14,8 @@ export default function Projects({ projects }) {
           <h2>Projects</h2>
           <div className="projects">
             {projects.map((proj, i) => (
-              <article className="project" key={i}>
-                <div className="right-data">
+              <article className="card" key={i}>
+                <div className="right">
                   <i className="fas fa-star"></i> {proj.stargazers_count}
                 </div>
                 <h3>
