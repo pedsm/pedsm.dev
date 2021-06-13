@@ -1,0 +1,27 @@
+.numbers {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media only screen and (max-width: 800px) {
+  .numbers {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat {
+  background-color: var(--codeBg);
+  color: var(--background);
+  border-radius: 5px;
+  padding: 12px;
+  span {
+    color: var(--background);
+    font-size: 36px;
+  }
+  p {
+    margin: 0px;
+    margin-top: 12px;
+    color: var(--background);
+  }
+}

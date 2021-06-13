@@ -19,6 +19,10 @@ const platforms = [
     icon: "fa-linkedin",
     link: "https://www.linkedin.com/in/pedmendonca/"
   },
+  {
+    icon: "fas fa-mug-hot",
+    link: "https://www.buymeacoffee.com/pedsm"
+  }
 ]
 
 export default function about() {

@@ -7,7 +7,7 @@ import '../sass/main.scss'
 
 export default function app({ Component, pageProps }) {
   const theme = useTheme()
-  console.log(theme)
+
   return (
     <>
       <Head>

@@ -30,4 +30,9 @@
 .links {
   padding: 12px 0;
   padding-bottom: 0;
+  a {
+    i:hover {
+      color: var(--heading);
+    }
+  }
 }
