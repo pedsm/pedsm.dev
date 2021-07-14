@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import marked from 'marked'
 import Title from '/components/title'
 import { getRepo } from '/client/github'
@@ -25,6 +26,8 @@ export default function ProjectView({ md, project, repo }) {
           <i className={`fas fas fa-exclamation-circle`}></i>
           {' '}
           {repo.open_issues_count}
+          {' '}
+          <a href={project.github} target='_blank'><i className='fab fa-github'></i></a>
         </p>
       </div>
 
@@ -34,6 +37,9 @@ export default function ProjectView({ md, project, repo }) {
           gfm: true
         })
       }}></div>
+      <p style={{textAlign:'right'}}>
+        <a href={project.github} target="_blank">Check it on GitHub</a>
+      </p>
     </section>
   )
 }

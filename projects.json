@@ -29,5 +29,12 @@
       "github": "https://github.com/pedsm/sprint",
       "description": "Async file running",
       "tags": ["oss"]
+    },
+    {
+      "id": "i6zViewer",
+      "name": "i6zViewer",
+      "github": "https://github.com/pedsm/i6zViewer",
+      "description": "A web-based Iuclid viewer",
+      "tags": ["oss", "web"]
     }
   ]
