@@ -21,7 +21,7 @@ const platforms = [
   },
   {
     icon: "fas fa-mug-hot",
-    link: "https://www.buymeacoffee.com/pedsm"
+    link: "https://ko-fi.com/pedsm"
   }
 ]
 
