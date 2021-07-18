@@ -5,6 +5,7 @@
       "/components/*": ["components/*"],
       "/hooks/*": ["hooks/*"],
       "/client/*": ["client/*"],
+      "/utils/*": ["utils/*"],
     }
   }
 }

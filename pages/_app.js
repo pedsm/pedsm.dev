@@ -36,7 +36,7 @@ export default function app({ Component, pageProps }) {
           <meta name="twitter:site" content="@pedsm" />
           <meta name="twitter:image" content="https://pedsm.dev/card.png" />
           <meta name="twitter:image:alt" content="Hi" />
-          <script type="text/javascript" src="startWorker.js"></script>
+          <script type="text/javascript" src="/startWorker.js"></script>
       </Head>
       <header className="section">
         <Navbar />
