@@ -5,7 +5,7 @@ import { getRepo } from '/client/github'
 import remarkUnwrapImages from 'remark-unwrap-images'
 import projects from '../../projects.json'
 import React from 'react'
-import getApiUrl from 'utils/config'
+import { getApiUrl } from '/utils/config'
 
 export default function ProjectView({ md, project, repo, imageMap }) {
   const components = {
