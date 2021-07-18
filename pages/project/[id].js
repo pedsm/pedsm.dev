@@ -5,6 +5,7 @@ import { getRepo } from '/client/github'
 import remarkUnwrapImages from 'remark-unwrap-images'
 import projects from '../../projects.json'
 import React from 'react'
+import getApiUrl from 'utils/config'
 
 export default function ProjectView({ md, project, repo, imageMap }) {
   const components = {
@@ -62,7 +63,7 @@ export function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  const appURL = process.env.VERCEL_URL
+  const appURL = getApiUrl()
   const { id } = context.params
   console.log('Buidling:', id)
   console.log(appURL)
