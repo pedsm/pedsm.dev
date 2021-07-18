@@ -1,18 +1,25 @@
-import Link from 'next/link'
-import marked from 'marked'
+import Image from 'next/image'
+import ReactMarkdown from 'react-markdown'
 import Title from '/components/title'
 import { getRepo } from '/client/github'
+import remarkUnwrapImages from 'remark-unwrap-images'
 import projects from '../../projects.json'
+import React from 'react'
 
-export default function ProjectView({ md, project, repo }) {
-  const baseUrl = project.github + '/raw/master/'
-  marked.use({
-    renderer: {
-      link: (href, title, text) => {
-        return `<a target="_blank" href="${href}">${text}</a>`
-      }
-    }
-  })
+export default function ProjectView({ md, project, repo, imageMap }) {
+  const components = {
+    img: (node) => {
+      const imageDetails = imageMap[node.src]
+      return <Image
+        placeholder="blur"
+        width={imageDetails.width}
+        height={imageDetails.height}
+        src={imageDetails.url}
+        blurDataURL={imageDetails.smallImg}
+        alt={node.alt}>
+      </Image>
+    },
+  }
 
   return (
     <section className="section">
@@ -31,13 +38,13 @@ export default function ProjectView({ md, project, repo }) {
         </p>
       </div>
 
-      <div className="ghContent" dangerouslySetInnerHTML={{
-        __html: marked(md, {
-          baseUrl,
-          gfm: true
-        })
-      }}></div>
-      <p style={{textAlign:'right'}}>
+      <ReactMarkdown
+        className="ghContent"
+        components={components}
+        linkTarget="_blank"
+        remarkPlugins={[remarkUnwrapImages]}
+      >{md}</ReactMarkdown>
+      <p style={{ textAlign: 'right' }}>
         <a href={project.github} target="_blank">Check it on GitHub</a>
       </p>
     </section>
@@ -62,13 +69,29 @@ export async function getStaticProps(context) {
   const res = await fetch(`https://raw.githubusercontent.com/pedsm/${id}/master/README.md`)
   const md = await res.text()
   const repo = await getRepo(id)
+  const baseUrl = project.github + '/raw/master/'
+  const imageMap = {}
+  const IMG_URL_REGEX = /!\[.*\]\((?<url>.*)\)/gm
+  let match;
+  while ((match = IMG_URL_REGEX.exec(md)) !== null) {
+    const { url } = match.groups
+    imageMap[url] = null
+  }
+
+  //Optimise this to promises in a nicer way
+  await Promise.all(Object.keys(imageMap).map(async (url) => {
+    const res = await fetch(`${process.env.API}api/imageSize?url=${baseUrl}${url}`)
+    const imageDetails = await res.json()
+    imageMap[url] = imageDetails
+  }))
 
   return {
     props: {
       md,
       project,
       repo,
-      baseUrl: project.github + '/raw/master/'
+      baseUrl,
+      imageMap,
     },
     revalidate: 10,
   }

@@ -44,6 +44,12 @@
     padding: 12px;
     border-spacing: 0;
   }
+
+  blockquote {
+    margin: 0;
+    padding: 1px 25px;
+    border-left: var(--codeBg) solid 5px;
+  }
 }
 
 .section {
