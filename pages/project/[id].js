@@ -1,11 +1,10 @@
+import React from 'react'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import Title from '/components/title'
 import { getRepo } from '/client/github'
 import remarkUnwrapImages from 'remark-unwrap-images'
 import projects from '../../projects.json'
-import React from 'react'
-import { getApiUrl } from '/utils/config'
 import imageSize from '/utils/imageSize'
 
 export default function ProjectView({ md, project, repo, imageMap }) {
@@ -64,15 +63,15 @@ export function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  const appURL = getApiUrl()
   const { id } = context.params
   console.log('Buidling:', id)
-  console.log(appURL)
 
   const project = projects.find(proj => proj.id == id)
-  const res = await fetch(`https://raw.githubusercontent.com/pedsm/${id}/master/README.md`)
+  const [repo, res] = await Promise.all([
+    getRepo(id),
+    fetch(`https://raw.githubusercontent.com/pedsm/${id}/master/README.md`)
+  ])
   const md = await res.text()
-  const repo = await getRepo(id)
   const baseUrl = project.github + '/raw/master/'
   const imageMap = {}
   const IMG_URL_REGEX = /!\[.*\]\((?<url>.*)\)/gm
@@ -82,7 +81,6 @@ export async function getStaticProps(context) {
     imageMap[url] = null
   }
 
-  //Optimise this to promises in a nicer way
   await Promise.all(Object.keys(imageMap).map(async (url) => {
     imageMap[url] = await imageSize(`${baseUrl}${url}`)
   }))
