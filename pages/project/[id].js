@@ -6,6 +6,7 @@ import remarkUnwrapImages from 'remark-unwrap-images'
 import projects from '../../projects.json'
 import React from 'react'
 import { getApiUrl } from '/utils/config'
+import imageSize from '/utils/imageSize'
 
 export default function ProjectView({ md, project, repo, imageMap }) {
   const components = {
@@ -83,9 +84,7 @@ export async function getStaticProps(context) {
 
   //Optimise this to promises in a nicer way
   await Promise.all(Object.keys(imageMap).map(async (url) => {
-    const res = await fetch(`${appURL}api/imageSize?url=${baseUrl}${url}`)
-    const imageDetails = await res.json()
-    imageMap[url] = imageDetails
+    imageMap[url] = await imageSize(`${baseUrl}${url}`)
   }))
 
   return {
