@@ -62,8 +62,10 @@ export function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
+  const appURL = process.env.VERCEL_URL
   const { id } = context.params
   console.log('Buidling:', id)
+  console.log(appURL)
 
   const project = projects.find(proj => proj.id == id)
   const res = await fetch(`https://raw.githubusercontent.com/pedsm/${id}/master/README.md`)
@@ -80,7 +82,7 @@ export async function getStaticProps(context) {
 
   //Optimise this to promises in a nicer way
   await Promise.all(Object.keys(imageMap).map(async (url) => {
-    const res = await fetch(`${process.env.API}api/imageSize?url=${baseUrl}${url}`)
+    const res = await fetch(`${appURL}api/imageSize?url=${baseUrl}${url}`)
     const imageDetails = await res.json()
     imageMap[url] = imageDetails
   }))
