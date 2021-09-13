@@ -1,18 +1,18 @@
 :root {
   --background: #000;
   --heading: white;
-  --text: #dddd;
-  --accent: #4082bf;
-  --codeBg: var(--text)
+  --text: #aaaaaa;
+  --accent: #4790d4;
+  --codeBg: #111111
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --background: white;
     --heading: black;
-    --text: #3b3b3b;
-    --accent: #4082bf;
-    --codeBg: var(--text)
+    --text: #666;
+    --accent: #4c9ae2;
+    --codeBg: #eeeeee
   }
 }
 

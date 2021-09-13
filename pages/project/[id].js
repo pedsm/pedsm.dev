@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import Title from '/components/title'
 import { getRepo } from '/client/github'
 import remarkUnwrapImages from 'remark-unwrap-images'
+import remarkGfm from 'remark-gfm'
 import projects from '../../projects.json'
 import imageSize from '/utils/imageSize'
 
@@ -43,7 +44,7 @@ export default function ProjectView({ md, project, repo, imageMap }) {
         className="ghContent"
         components={components}
         linkTarget="_blank"
-        remarkPlugins={[remarkUnwrapImages]}
+        remarkPlugins={[remarkUnwrapImages, remarkGfm]}
       >{md}</ReactMarkdown>
       <p style={{ textAlign: 'right' }}>
         <a href={project.github} target="_blank">Check it on GitHub</a>
