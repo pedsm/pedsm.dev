@@ -1,7 +1,23 @@
 .projects {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.project {
+  border-bottom: 1px var(--heading) solid;
+  padding-bottom: 0.2em;
+  h3 {
+    margin: 0;
+    margin-bottom: 0.5em;
+  }
+  p {
+    margin: 0;
+  }
+  .right {
+    float: right;
+  }
+
 }
 
 @media only screen and (max-width: 800px) {
@@ -13,10 +29,4 @@
 .links {
   padding: 12px 0;
   padding-bottom: 0;
-  a {
-    color: var(--text);
-    i:hover {
-      color: var(--heading);
-    }
-  }
 }

@@ -14,7 +14,7 @@ export default function Projects({ projects }) {
           <h2>Projects</h2>
           <div className="projects">
             {projects.map((proj, i) => (
-              <article className="card" key={i}>
+              <article className="project" key={i}>
                 <div className="right">
                   <i className="fas fa-star"></i> {proj.stargazers_count}
                 </div>
@@ -30,7 +30,8 @@ export default function Projects({ projects }) {
                 </Link>
                 <div className="links">
                   {proj.env ? <a href={proj.env}>Try it</a> : ''}
-                  <a href={proj.html_url} target="_blank"><i className="fab fa-github fa-lg"></i></a>
+                  {/* <a href={proj.html_url} target="_blank"><i className="fab fa-github fa-lg"></i></a> */}
+                  <a href={proj.html_url} target="_blank">GitHub</a>
                 </div>
               </article>
             ))}
