@@ -1,5 +1,13 @@
   [
     {
+      "id": "planning-poker",
+      "name": "planning-poker",
+      "github": "https://github.com/pedsm/planning-poker",
+      "env": "https://pl-poker.herokuapp.com/",
+      "description": "Socket based planning poker",
+      "tags": ["oss", "web"]
+    },
+    {
       "id": "iemanja",
       "name": "iemanja",
       "github": "https://github.com/pedsm/iemanja",
