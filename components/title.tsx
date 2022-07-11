@@ -1,9 +1,10 @@
 import Head from 'next/head'
+import { ReactNode } from 'react-markdown'
 
-export default function Title({children}) {
+export default function Title({children}: {children: ReactNode}) {
   return (
     <Head>
-      <title>{children} - pedsm.dev</title>
+      <title>{children?.toString()} - pedsm.dev</title>
     </Head>
   )
 

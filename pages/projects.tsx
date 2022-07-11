@@ -1,11 +1,11 @@
 import Title from '/components/title'
 import Tag from '/components/tag'
-import { getRepo } from '/client/github'
+import { getRepo, GithubRepo } from '/client/github'
 import Link from 'next/link'
 
-import projJson from '../projects'
+import projJson, { Project } from '../projects'
 
-export default function Projects({ projects }) {
+export default function Projects({ projects }: Props) {
   return (
     <>
       <Title>Projects</Title>
@@ -29,7 +29,7 @@ export default function Projects({ projects }) {
                   </div>
                 </Link>
                 <div className="links">
-                  {proj.env ? <a href={proj.env}>Try it</a> : ''}
+                  {proj.repo.env ? <a href={proj.repo.env}>Try it</a> : ''}
                   <a href={proj.html_url} target="_blank"><i className="fab fa-github fa-lg"></i></a>
                 </div>
               </article>
@@ -41,7 +41,11 @@ export default function Projects({ projects }) {
   )
 }
 
-export async function getStaticProps() {
+type Props = {
+  projects: (GithubRepo & { repo: Project })[]
+} 
+
+export async function getStaticProps(): Promise<{ props: Props }> {
   const repos = await Promise.all(
     projJson.map(async (repo) => {
       const ghRepo = await getRepo(repo.id)

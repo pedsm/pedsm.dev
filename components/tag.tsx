@@ -1,13 +1,13 @@
-const tagMap = {
-  oss: "OSS",
-  desktop: "Desktop",
-  web: "Web"
+export enum ProjectTag {
+  OSS="OSS",
+  DESKTOP="Desktop",
+  WEB="Web",
 }
 
-export default function Tag({tag}) {
+export default function Tag({tag}: {tag: ProjectTag}) {
 
   return (
-    <span className={`tag ${tag}`}>{tagMap[tag]}</span>
+    <span className={`tag ${tag}`}>{tag}</span>
   )
 
 }

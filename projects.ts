@@ -1,12 +1,16 @@
-type Project = {
+import { ProjectTag } from "./components/tag"
+
+export type Project = {
   id: string,
   name: string,
   github: string,
   env?: string,
   description: string,
   img?: string,
-  tags: string[],
+  tags: ProjectTag[],
 }
+
+const { OSS, DESKTOP, WEB } = ProjectTag
 
 const projects: Project[] = [
   {
@@ -15,7 +19,7 @@ const projects: Project[] = [
     "github": "https://github.com/pedsm/planning-poker",
     "env": "https://pl-poker.herokuapp.com/",
     "description": "Socket based planning poker",
-    "tags": ["oss", "web"]
+    "tags": [OSS, WEB]
   },
   {
     "id": "iemanja",
@@ -23,7 +27,7 @@ const projects: Project[] = [
     "github": "https://github.com/pedsm/iemanja",
     "description": "A desktop mermaid editor",
     "img": "https://raw.githubusercontent.com/pedsm/iemanja/master/.github/iemanja1.png",
-    "tags": ["oss", "desktop"]
+    "tags": [OSS, DESKTOP]
   },
   {
     "id": "safePostcode",
@@ -32,28 +36,28 @@ const projects: Project[] = [
     "description": "Is my postcode safe?",
     "env": "https://safepostcode.pedsm.now.sh/",
     "img": "https://github.com/pedsm/safePostcode/raw/master/.github/safepostcode.png",
-    "tags": ["oss", "web"]
+    "tags": [OSS, WEB]
   },
   {
     "id": "jester",
     "name": "jester",
     "github": "https://github.com/pedsm/jester",
     "description": "A VS Code extension",
-    "tags": ["oss"]
+    "tags": [OSS]
   },
   {
     "id": "sprint",
     "name": "sprint",
     "github": "https://github.com/pedsm/sprint",
     "description": "Async file running",
-    "tags": ["oss"]
+    "tags": [OSS]
   },
   {
     "id": "i6zViewer",
     "name": "i6zViewer",
     "github": "https://github.com/pedsm/i6zViewer",
     "description": "A web-based Iuclid viewer",
-    "tags": ["oss", "web"]
+    "tags": [OSS, WEB]
   }
 ]
 
