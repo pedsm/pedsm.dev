@@ -6,5 +6,5 @@ export function getApiUrl() {
 }
 
 export function isLocal() {
-  return process.env.VERCEL != 1
+  return process.env.VERCEL !== '1'
 }

@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 
-async function ghFetch(url) {
+async function ghFetch(url: string) {
   const res = await fetch(url,
     process.env.GH_AUTH 
     ? {
@@ -13,15 +13,15 @@ async function ghFetch(url) {
   return res.json()
 }
 
-export async function getRepo(name) {
+export async function getRepo(name: string) {
   return ghFetch(`https://api.github.com/repos/pedsm/${name}`)
 }
 
-export async function getReposFromUser(name) {
+export async function getReposFromUser(name: string) {
   return ghFetch(`https://api.github.com/users/${name}/repos?per_page=100`)
 }
 
-export function useRepos(name) {
+export function useRepos(name: string) {
   const [repos, setRepos] = useState([])
 
   useEffect(() => {
