@@ -10,6 +10,7 @@ export default async function calculateImageSize(url:string) {
   return {
     url,
     ...size,
-    smallImg: await smallImg.getBase64Async(jimp.AUTO.toString())
+    //@ts-ignore
+    smallImg: await smallImg.getBase64Async(jimp.AUTO)
   }
 }
