@@ -56,6 +56,7 @@ const projects: Project[] = [
     "id": "i6zViewer",
     "name": "i6zViewer",
     "github": "https://github.com/pedsm/i6zViewer",
+    "env": "https://i6z-viewer.vercel.app",
     "description": "A web-based Iuclid viewer",
     "tags": [OSS, WEB]
   }
