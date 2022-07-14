@@ -1,9 +1,10 @@
-import { getReposFromUser } from '/client/github'
-import { twitterGet } from '/client/twitter'
+import { GetStaticPropsContext, GetStaticPropsResult } from 'next'
+import { getReposFromUser, GithubRepo } from '/client/github'
+import { twitterGet, TwitterUser } from '/client/twitter'
 import StatRoller from '/components/statRoller'
 import Title from '/components/title'
 
-export default function numbers({ twitter, repos }) {
+export default function numbers({ twitter, repos }: { twitter: TwitterUser, repos: GithubRepo[] }) {
   const starCount = repos.reduce((a,b) => {
     return a + b.stargazers_count
   }, 0)
@@ -22,7 +23,7 @@ export default function numbers({ twitter, repos }) {
   )
 }
 
-export async function getStaticProps(ctx) {
+export async function getStaticProps(ctx: GetStaticPropsContext) {
   const [twitterUser, repos] = await Promise.all([
     twitterGet('https://api.twitter.com/2/users/by/username/pedsm?user.fields=public_metrics'),
     getReposFromUser('pedsm')
@@ -30,7 +31,7 @@ export async function getStaticProps(ctx) {
 
   return {
     props: {
-      twitter: twitterUser.data,
+      twitter: twitterUser,
       repos,
     },
     revalidate: 10,

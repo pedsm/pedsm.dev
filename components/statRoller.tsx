@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react'
 
-export default function StatRoller({ number, description, url }) {
+type StatRollerProps = {
+  number: number,
+  description: string,
+  url: string
+}
+
+export default function StatRoller({ number, description, url }: StatRollerProps) {
   const [num, setNum] = useState(0)
   const growRate = number/60;
 

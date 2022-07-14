@@ -2,22 +2,44 @@ import React from 'react'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import Title from '/components/title'
-import { getRepo } from '/client/github'
+import { getRepo, GithubRepo } from '/client/github'
 import remarkUnwrapImages from 'remark-unwrap-images'
-import projects from '../../projects.json'
+import projects, { Project } from '../../projects'
 import imageSize from '/utils/imageSize'
+import { ISize } from 'image-size/dist/types/interface'
+import { GetStaticPropsContext } from 'next'
+import { NormalComponents, SpecialComponents } from 'react-markdown/src/ast-to-react'
 
-export default function ProjectView({ md, project, repo, imageMap }) {
-  const components = {
+type props = {
+  md: string,
+  project: Project,
+  repo: GithubRepo,
+  imageMap: ImageMap,
+}
+
+type ImageMap = {
+  [key: string]: {
+    smallImg: string;
+    images?: ISize[] | undefined;
+    width: number | undefined;
+    height: number | undefined;
+    orientation?: number | undefined;
+    type?: string | undefined;
+    url: string;
+  } | null
+}
+
+export default function ProjectView({ md, project, repo, imageMap }: props) {
+  const components: Partial<NormalComponents & SpecialComponents>  = {
     img: (node) => {
-      const imageDetails = imageMap[node.src]
+      const imageDetails = imageMap[node.src as string]!
       return <Image
         placeholder="blur"
         width={imageDetails.width}
         height={imageDetails.height}
         src={imageDetails.url}
         blurDataURL={imageDetails.smallImg}
-        alt={node.alt}>
+        >
       </Image>
     },
   }
@@ -62,22 +84,22 @@ export function getStaticPaths() {
   return routes
 }
 
-export async function getStaticProps(context) {
-  const { id } = context.params
-  console.log('Buidling:', id)
+export async function getStaticProps(context: GetStaticPropsContext) {
+  const id = (context.params!.id) as string
+  console.log('Building:', id)
 
-  const project = projects.find(proj => proj.id == id)
+  const project: Project = projects.find(proj => proj.id == id)!
   const [repo, res] = await Promise.all([
     getRepo(id),
     fetch(`https://raw.githubusercontent.com/pedsm/${id}/master/README.md`)
   ])
   const md = await res.text()
   const baseUrl = project.github + '/raw/master/'
-  const imageMap = {}
+  const imageMap: ImageMap = {}
   const IMG_URL_REGEX = /!\[.*\]\((?<url>.*)\)/gm
   let match;
   while ((match = IMG_URL_REGEX.exec(md)) !== null) {
-    const { url } = match.groups
+    const url = match.groups!.url as string
     imageMap[url] = null
   }
 

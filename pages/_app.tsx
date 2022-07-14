@@ -4,8 +4,9 @@ import Footer from '/components/footer'
 import { useTheme } from '/hooks/theme'
 
 import '../sass/main.scss'
+import { AppProps } from 'next/app'
 
-export default function app({ Component, pageProps }) {
+export default function app({ Component, pageProps }: AppProps) {
   const theme = useTheme()
 
   return (
