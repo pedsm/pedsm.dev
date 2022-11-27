@@ -1,6 +1,7 @@
 :root {
   --background: #000;
   --heading: white;
+  --secondary-bg: rgb(20, 20, 20);
   --text: #ababab;
   --codeBg: var(--text)
 }
@@ -9,6 +10,7 @@
 :root {
   --background: white;
   --heading: black;
+  --secondary-bg: white;
   --text: #555;
   --codeBg: var(--text)
 }

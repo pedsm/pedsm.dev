@@ -14,11 +14,19 @@ const { OSS, DESKTOP, WEB } = ProjectTag
 
 const projects: Project[] = [
   {
-    "id": "planning-poker",
+    "id": "liveCup",
+    "name": "live-cup",
+    "github": "https://github.com/pedsm/liveCup",
+    "env": "https://live-cup.pedsm.dev",
+    "description": "Your world cup 2022 dashboard",
+    "tags": [OSS, WEB]
+  },
+  {
+    "id": "pl-poker",
     "name": "planning-poker",
     "github": "https://github.com/pedsm/planning-poker",
     "env": "https://pl-poker.herokuapp.com/",
-    "description": "Socket based planning poker",
+    "description": "socket based planning poker",
     "tags": [OSS, WEB]
   },
   {
