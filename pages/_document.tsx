@@ -9,10 +9,21 @@ export default class extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="#FFFFFF"
+          />
+          <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="#000000"
+          />
+        </Head>
         <Main />
         <NextScript />
       </Html>
-    )
+    );
   }
 }
