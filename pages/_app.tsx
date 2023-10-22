@@ -6,8 +6,16 @@ import { useTheme } from '/hooks/theme'
 import '../sass/main.scss'
 import { AppProps } from 'next/app'
 
-export default function app({ Component, pageProps }: AppProps) {
+export default function app({ Component, pageProps, router }: AppProps) {
   const theme = useTheme()
+
+  if(router.pathname.includes('/spook')) {
+    return (
+      <>
+        <Component {...pageProps} />
+      </>
+    )
+  }
 
   return (
     <>

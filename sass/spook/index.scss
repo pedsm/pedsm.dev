@@ -1,0 +1,29 @@
+:root {
+	--orange: rgb(255, 178, 36);
+}
+
+.spookMain {
+	max-width: 480px;
+	width: 100%;
+	margin: auto;
+	padding: 48px;
+
+	h1 {
+		font-size: 48px;
+		margin: auto;
+		text-align: center;
+	}
+
+	select {
+		font-size: large;
+		width: 100%;
+		height: 2.5em;
+
+
+	}
+	.option:hover {
+		background: var(--orange) !important
+	}
+
+}
+
