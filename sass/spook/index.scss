@@ -2,11 +2,15 @@
 	--orange: rgb(255, 178, 36);
 }
 
+* {
+	box-sizing: border-box;
+}
+
 .spookMain {
 	max-width: 480px;
 	width: 100%;
 	margin: auto;
-	padding: 48px;
+	padding: 16px;
 
 	h1 {
 		font-size: 48px;
@@ -16,15 +20,35 @@
 
 	select {
 		font-size: large;
+		border-radius: 18px;
 		width: 100%;
 		height: 2.5em;
 		padding: 12px;
-		height: 48px;
-
+		height: 3em;
+		margin-bottom: 1em;
+		option {
+			height: 3em;
+			padding: 1em;
+		}
 	}
-	.option:active {
-		background: var(--orange) !important
-	}
+	position:relative;
+	height: 100vh;
 
+}
+
+.spookButton {
+	width: calc(100% - 32px);
+	background-color: white;
+	padding: 1em 0;
+	text-align: center;
+	color: black;
+	bottom: 32px;
+	border-radius: 18px;
+	position: absolute;
+	cursor: pointer;
+
+	&:active {
+		background-color: var(--orange);
+	}
 }
 
