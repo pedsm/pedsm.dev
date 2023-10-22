@@ -20,16 +20,21 @@ export default function SpookHome() {
 			<h1>Spooktacular Halloween 2023</h1>
 			<Select 
 				defaultValue={selectOptions[0]}
-				onChange={setSelection}
+				onChange={(newVal: {value: string, label: string}) => {
+					setSelection(newVal)
+					return
+				}}
 				options={selectOptions}
 				styles={{backgroundColor: 'orange'}}
 			/>
+		
+			<br></br>
 
-			{/* <select>
+			<select>
 				{options.map((a,i) => (
 					<option className="option" key={i}>{a.costume} ({a.name})</option>
 				))}
-			</select> */}
+			</select>
 		</div>
 	)
 }
