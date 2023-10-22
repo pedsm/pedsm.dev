@@ -1,21 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
 
+@font-face {
+    font-family: 'basier';
+    src: url('/fonts/basiercircle-regular-webfont.eot');
+    src: url('/fonts/basiercircle-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/basiercircle-regular-webfont.woff2') format('woff2'),
+         url('/fonts/basiercircle-regular-webfont.woff') format('woff'),
+         url('/fonts/basiercircle-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 * {
   font-display: swap;
+  font-family: 'basier', 'Nunito', sans-serif;
 }
 
 p {
+  font-family: 'basier', 'Nunito', sans-serif;
   color: var(--text);
 }
 
 body {
   font-size: 18px;
-  font-family: Helvetica, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Nunito', sans-serif;
   color: var(--heading);
   font-weight: 600;
 }
@@ -39,7 +51,6 @@ h1,h2,h3 {
 }
 
 a {
-  font-family: 'Nunito', sans-serif;
   color: var(--heading);
   text-decoration: none;
 }
