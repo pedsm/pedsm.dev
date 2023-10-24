@@ -2,8 +2,36 @@
 	--orange: rgb(255, 178, 36);
 }
 
+@font-face {
+    font-family: "Malabo Regular";
+    src: url("https://db.onlinewebfonts.com/t/77ed9d44106b683af77b21d64798f578.eot");
+    src: url("https://db.onlinewebfonts.com/t/77ed9d44106b683af77b21d64798f578.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/77ed9d44106b683af77b21d64798f578.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/77ed9d44106b683af77b21d64798f578.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/77ed9d44106b683af77b21d64798f578.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/77ed9d44106b683af77b21d64798f578.svg#Malabo Regular")format("svg");
+}
+
+@font-face {
+    font-family: 'abril_fatfaceregular';
+    src: url('/spook/AbrilFatface-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GallowTree-Regular";
+    src: url("https://db.onlinewebfonts.com/t/4560055bed7a07bc10b5cc37109d35d6.eot");
+    src: url("https://db.onlinewebfonts.com/t/4560055bed7a07bc10b5cc37109d35d6.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/4560055bed7a07bc10b5cc37109d35d6.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/4560055bed7a07bc10b5cc37109d35d6.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/4560055bed7a07bc10b5cc37109d35d6.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/4560055bed7a07bc10b5cc37109d35d6.svg#GallowTree-Regular")format("svg");
+}
+
 * {
 	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
 }
 
 .spookMain {
@@ -11,10 +39,33 @@
 	width: 100%;
 	margin: auto;
 	padding: 16px;
+	text-align: center;
+
+	img {
+		margin: auto;
+		left: 25vw;
+		width: 50vw;
+		position: absolute;
+
+		z-index: -1;
+	}
+
+	p {
+		font-family: 'GallowTree-Regular', serif;
+		color: white;
+		margin-bottom: 4px;
+		font-size: 24px;
+		text-transform: uppercase;
+	}
 
 	h1 {
-		font-size: 48px;
+		text-shadow: rgb(81, 81, 81) 0px 2px 1px;
+		font-family: 'Malabo Regular', serif;
+		font-size: 128px;
+		line-height: 90px;
+		font-weight: 400;
 		margin: auto;
+		margin-bottom: 40px;
 		text-align: center;
 	}
 
@@ -39,14 +90,20 @@
 .spookButton {
 	width: calc(100% - 32px);
 	background-color: white;
-	padding: 1em 0;
+	font-size: 34px;
+	padding: 0.2em 0;
 	text-align: center;
 	color: black;
 	bottom: 32px;
 	border-radius: 18px;
 	position: absolute;
+	text-transform: uppercase;
 	cursor: pointer;
+	font-family: 'GallowTree-Regular', serif;
 
+	&:target {
+		background-color: var(--orange);
+	}
 	&:active {
 		background-color: var(--orange);
 	}
