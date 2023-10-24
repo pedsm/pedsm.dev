@@ -1,25 +1,53 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const options = [
-	{ name: "Mika", costume: "Remy" },
-	{ name: "Pedro", costume: "Alfredo Linguini" },
-]
+type Participant = {
+	id: string,
+	name: string,
+	costume: string,
+}
 
-const selectOptions = options.map((a) => ({
-	label: `${a.costume} (${a.name})`,
-	value: a.name
-}))
+function generateDeviceFingerprint() {
+    var fingerprint = [];
+
+    // User agent
+    fingerprint.push(navigator.userAgent);
+
+    // Platform
+    fingerprint.push(navigator.platform);
+
+    // Hardware details
+    fingerprint.push(navigator.hardwareConcurrency || 'N/A');
+
+    // CPU architecture
+		//@ts-ignore
+    fingerprint.push(navigator.cpuClass || navigator.platform || 'N/A');
+
+    // Do similar for other device-specific attributes if needed
+
+    // Join all the information
+    return fingerprint.join('|');
+}
 
 
 export default function SpookHome() {
+	const [options, setOptions] = useState<Participant[]>([])
+	const loading = options.length === 0
 	const [selection, setSelection] = useState<string | null>(null)
 	const [voter, setVoter] = useState<string | null>(null)
+
+	useEffect(() => {
+		axios.get<{ participants: Participant[] }>('/api/spook').then((res) => {
+			const data = res.data
+			setOptions(data.participants)
+		})
+	}, [])
 
 	const submit = async () => {
 		await axios.post('/api/spook', {
 			answer: selection,
-			sentBy: voter
+			sentBy: voter,
+			fingerPrint: generateDeviceFingerprint()
 		})
 		console.log('Submitted')
 	}
@@ -43,9 +71,18 @@ export default function SpookHome() {
 					<option className="option" key={i} value={a.name}> {a.name}</option>
 				))}
 			</select>
-			<div onClick={submit} className='spookButton'>
-				Submit
-			</div>
+			{loading 
+				? (
+					<div className='spookButton'>
+						Loading...
+					</div>
+				)
+				: (
+					<div onClick={submit} className='spookButton'>
+						Submit
+					</div>
+				)
+			}
 		</div>
 	)
 }
