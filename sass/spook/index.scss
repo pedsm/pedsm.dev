@@ -36,10 +36,14 @@
 
 .spookMain {
 	max-width: 480px;
-	width: 100%;
 	margin: auto;
+	width: 100%;
 	padding: 16px;
 	text-align: center;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
 
 	img {
 		margin: auto;
@@ -64,7 +68,6 @@
 		font-size: 128px;
 		line-height: 90px;
 		font-weight: 400;
-		margin: auto;
 		margin-bottom: 40px;
 		text-align: center;
 	}
@@ -82,24 +85,22 @@
 			padding: 1em;
 		}
 	}
-	position:relative;
-	height: 100vh;
 
 }
 
 .spookButton {
-	width: calc(100% - 32px);
+	width: 100%;
 	background-color: white;
 	font-size: 34px;
 	padding: 0.2em 0;
 	text-align: center;
 	color: black;
-	bottom: 32px;
 	border-radius: 18px;
-	position: absolute;
 	text-transform: uppercase;
 	cursor: pointer;
 	font-family: 'GallowTree-Regular', serif;
+	margin-top: auto;
+	margin-bottom: 24px;
 
 	&:target {
 		background-color: var(--orange);
