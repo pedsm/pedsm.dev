@@ -17,6 +17,7 @@ export default function SpookHome() {
 			{/* <img alt="Jack o latern" src="/spook/jack.svg"></img> */}
 
 			<h1>Spooky Halloween 2023</h1>
+			<audio autoPlay src='/spook/sound.mp3'/>
 
 			<p style={{textAlign: 'center', width: '100%'}}>Thank you!</p>
 			<p style={{textAlign: 'center', width:'100%'}}>You have voted</p>
