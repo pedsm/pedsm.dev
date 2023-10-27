@@ -1,5 +1,5 @@
 :root {
-	--orange: #C76232;
+	--accent: #E91D26;
 }
 @font-face {
     font-family: "Malabo Regular";
@@ -61,7 +61,10 @@
 	}
 
 	h1 {
+		// color: var(--orange);
+		color: var(--accent);
 		text-shadow: rgb(81, 81, 81) 0px 2px 1px;
+		// text-shadow: rgb(182, 182, 182) 0px 2px 1px;
 		font-family: 'Malabo Regular', serif;
 		font-size: 128px;
 		line-height: 90px;
@@ -88,7 +91,6 @@
 
 .spookButton {
 	width: 100%;
-	background-color: white;
 	font-size: 34px;
 	padding: 0.2em 0;
 	text-align: center;
@@ -100,11 +102,9 @@
 	margin-top: auto;
 	margin-bottom: 24px;
 
-	&:target {
-		background-color: var(--orange);
-	}
+	background-color: var(--accent);
 	&:active {
-		background-color: var(--orange);
+		background-color: white;
 	}
 }
 

@@ -70,7 +70,7 @@ export default function SpookHome() {
 	return (
 		<div className="spookMain">
 
-			<img alt="Jack o latern" src="/spook/jack.svg"></img>
+			{/* <img alt="Jack o latern" src="/spook/jack.svg"></img> */}
 
 			<h1>Spooky Halloween 2023</h1>
 
