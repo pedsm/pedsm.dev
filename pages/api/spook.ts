@@ -80,7 +80,7 @@ export default async function handler(
 				fingerPrint: body.fingerPrint
 			})
 
-			res.status(200).json({
+			return res.status(200).json({
 				message: 'Answer recorded'
 			})
 		} catch(e) {
@@ -90,7 +90,7 @@ export default async function handler(
 			})
 		}
 	}
-	res.status(404).json({
+	return res.status(404).json({
 		message: 'Not implemented'
 	})
 }

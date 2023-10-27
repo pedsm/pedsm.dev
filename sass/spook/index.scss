@@ -109,3 +109,12 @@
 	}
 }
 
+.disabled {
+	background-color: grey;
+	cursor: not-allowed; 
+
+	&:active {
+		background-color: grey;
+	}
+}
+

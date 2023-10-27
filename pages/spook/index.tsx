@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { getVoted, markVote } from '/utils/voteLogic';
+import { useRouter } from 'next/router';
 
 type Participant = {
 	id: string,
@@ -31,25 +33,38 @@ function generateDeviceFingerprint() {
 
 
 export default function SpookHome() {
+	const router = useRouter()
 	const [options, setOptions] = useState<Participant[]>([])
-	const loading = options.length === 0
+	const [loading, setLoading] = useState(true)
 	const [selection, setSelection] = useState<string | null>(null)
 	const [voter, setVoter] = useState<string | null>(null)
 
+	const buttonEnabled = selection !== null && voter !== null && voter !== 'none'
+
 	useEffect(() => {
+		const voted = getVoted()
+		if(voted === true) {
+			router.push('/spook/done')
+		}
 		axios.get<{ participants: Participant[] }>('/api/spook').then((res) => {
 			const data = res.data
 			setOptions(data.participants)
+			setSelection(data.participants[0].name)
+			setLoading(false)
 		})
 	}, [])
 
 	const submit = async () => {
+		if(buttonEnabled === false) return
+		setLoading(true)
 		await axios.post('/api/spook', {
 			answer: selection,
 			sentBy: voter,
 			fingerPrint: generateDeviceFingerprint()
 		})
-		console.log('Submitted')
+		markVote()
+		router.push('/spook/done')
+		setLoading(false)
 	}
 
 	return (
@@ -67,18 +82,19 @@ export default function SpookHome() {
 			</select>
 			<p>My name is:</p>
 			<select onChange={(e) => setVoter(e.target.value)}>
+				<option className='option' value='none'>What's your name?</option>
 				{options.map((a, i) => (
 					<option className="option" key={i} value={a.name}> {a.name}</option>
 				))}
 			</select>
 			{loading 
 				? (
-					<div className='spookButton'>
+					<div className='spookButton disabled'>
 						Loading...
 					</div>
 				)
 				: (
-					<div onClick={submit} className='spookButton'>
+					<div className={'spookButton ' + (buttonEnabled ? '' : 'disabled')} onClick={submit}>
 						Submit
 					</div>
 				)
