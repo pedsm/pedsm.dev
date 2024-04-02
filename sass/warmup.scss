@@ -1,0 +1,63 @@
+.exercises-container {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--space-400);
+}
+
+body,
+html {
+	scroll-snap-type: y proximity;
+	@media screen and (min-width: $breakpoint-tablet){
+		scroll-snap-type: none;
+	}
+}
+
+.hidden {
+	opacity: 0;
+}
+
+.big-number {
+	font-size: 2.5rem;
+	width: 100%;
+	text-align: center;
+	font-family: "Fira Mono", monospace;
+	font-weight: 500;
+}
+
+.exercise-body {
+	display: grid;
+	grid-template-rows: min-content auto auto min-content;
+
+	background: var(--background-card);
+	padding: var(--space-300);
+	border-radius: var(--space-200);
+	
+	height: calc(60vh - var(--space-1600));
+	
+	scroll-snap-align: center;
+
+	&.active {
+		outline: 1px solid var(--text);
+	}
+
+	@media screen and (min-width: $breakpoint-tablet){
+		height: auto;
+	}
+}
+
+.exercise-head {
+	display: grid;
+	grid-template-columns: 1fr min-content;
+} 
+
+.tag {
+	&.tag-bar {
+		background-color: var(--data-color-1);
+	}
+	&.tag-hangboard {
+		background-color: var(--data-color-2);
+	}
+	&.tag-mat {
+		background-color: var(--data-color-3);
+	}
+}

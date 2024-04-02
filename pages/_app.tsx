@@ -13,18 +13,6 @@ export default function app({ Component, pageProps, router }: AppProps) {
     return <Component></Component>
   }
 
-  if(router.pathname.includes('/spook')) {
-    return (
-      <>
-        <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <title>Spooky Halloween 2023</title>
-        </Head>
-        <Component {...pageProps} />
-      </>
-    )
-  }
-
   return (
     <>
       <Head>
@@ -33,7 +21,12 @@ export default function app({ Component, pageProps, router }: AppProps) {
           <link rel="icon" type="image/png" sizes="16x16" href={`${theme}/favicon-16x16.png`}/>
           <link rel="manifest" href="/site.webmanifest"></link>
           <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+
           <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
           <meta name="Description" content="Hi I am Pedro and this is my personal page, a home for all my work"/>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />

@@ -18,6 +18,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Nunito', sans-serif;
   color: var(--heading);
   font-weight: 600;
+  margin: 0; 
 }
 
 h1 {
@@ -32,6 +33,7 @@ p {
   font-weight: 400;
 }
 
+
 h1,h2,h3 {
   a {
     text-decoration: none;
@@ -42,4 +44,10 @@ a {
   font-family: 'Nunito', sans-serif;
   color: var(--heading);
   text-decoration: none;
+}
+
+// Modifiers
+
+.small {
+  font-size: 0.9rem;
 }

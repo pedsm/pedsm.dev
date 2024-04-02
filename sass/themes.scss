@@ -1,10 +1,34 @@
 :root {
+  // Backgrounds
   --background: #000;
+
+  --background-card: hsl(0, 0%, 10%);
+
   --heading: white;
   --secondary-bg: rgb(20, 20, 20);
   --text: #ababab;
   --codeBg: var(--text)
+
+  --space-100: 4px;
+  --space-200: 8px;
+  --space-300: 12px;
+  --space-400: 16px;
+  --space-800: 32px;
+  --space-1600: 64px;
+
+
+  --data-color-1: hsl(341, 100%, 49%);
+  --data-color-2: #0bb4ff;
+  --data-color-3: #50e991;
+  --data-color-4: #e6d800;
+  --data-color-5: #9b19f5;
+  --data-color-6: #ffa300;
+  --data-color-7: #dc0ab4;
+  --data-color-8: #b3d4ff;
+  --data-color-9: #00bfa0;
 }
+
+$breakpoint-tablet: 800px;
 
 // @media (prefers-color-scheme: light) {
 // :root {

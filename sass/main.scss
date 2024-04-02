@@ -9,12 +9,22 @@
 @import "./themes.scss";
 @import "./numbers.scss";
 @import "./card.scss";
-@import "./spook/index.scss";
+@import "./warmup.scss";
 
 body {
     background-color: var(--background); 
     color: var(--text);
     margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-400);
 }
 
 .level {
