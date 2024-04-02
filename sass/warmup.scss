@@ -34,7 +34,7 @@ html {
 	
 	height: calc(60vh - var(--space-1600));
 	
-	scroll-snap-align: center;
+	// scroll-snap-align: center;
 
 	&.active {
 		outline: 1px solid var(--text);
