@@ -101,7 +101,7 @@ export default function Warmup() {
 					<ExerciseCard 
 						active={activeIndex === i}
 						onClick={(e) => {
-							(e.target as HTMLDivElement).scrollIntoView({ behavior: 'smooth', block: 'center' })
+							e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'center' })
 							setActiveIndex(i)
 						}} 
 						key={i} exercise={exercise}
