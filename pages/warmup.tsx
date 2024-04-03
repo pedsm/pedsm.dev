@@ -1,4 +1,3 @@
-import { format } from "path";
 import React, { useEffect, useState } from "react";
 
 type Equipment = 'bar' | 'hangboard' | 'mat'
