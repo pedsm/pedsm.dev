@@ -2,10 +2,16 @@
   // Backgrounds
   --background: #000;
 
-  --background-card: hsl(0, 0%, 10%);
+  // Card
+  --background-card: hsl(0, 0%, 5%);
+  --card-border: #000;
+  --card-color: hsl(0,0%,90%);
 
+  // Shadow
+  --shadow-color: hsl(0,0%, 0%);
+
+  --selection-color: hsl(60, 0%, 17%);
   --heading: white;
-  --secondary-bg: rgb(20, 20, 20);
   --text: #ababab;
   --codeBg: var(--text)
 
@@ -18,6 +24,7 @@
 
 
   --data-color-1: hsl(341, 100%, 49%);
+  --data-color-1-alpha: hsl(341, 100%, 49%, 50%);
   --data-color-2: #0bb4ff;
   --data-color-3: #50e991;
   --data-color-4: #e6d800;
@@ -30,14 +37,21 @@
 
 $breakpoint-tablet: 800px;
 
-// @media (prefers-color-scheme: light) {
-// :root {
-//   --background: white;
-//   --heading: black;
-//   --secondary-bg: white;
-//   --text: #555;
-//   --codeBg: var(--text)
-// }
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: white;
+
+    --background-card: hsl(0, 0%, 100%);
+    --card-border: hsl(0, 0%, 90%);
+    --card-color: hsl(0,0%,10%);
+
+    --shadow-color: hsl(0,0%, 80%);
+
+    --selection-color: #fff9a8;
+    --heading: black;
+    --text: #555;
+    --codeBg: var(--text)
+  }
   
-// }
+}
 
