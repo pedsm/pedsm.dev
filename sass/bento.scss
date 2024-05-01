@@ -35,6 +35,9 @@
 	display: grid;
 	grid-template-rows: auto min-content;
 	& > h3 {
+		@media (max-width: $breakpoint-tablet) {
+			font-size: 52px;
+		}
 		margin: auto;
 		font-size: 68px; 
 		color: var(--data-color-1);
