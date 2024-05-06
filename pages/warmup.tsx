@@ -90,8 +90,35 @@ function ExerciseCard(props: { exercise: Exercise, active: boolean } & divProps)
 	)
 }
 
+interface IWakeLock {
+	addEventListener(event: string, func: Function): void
+	release(): void
+}
+
 export default function Warmup() {
 	const [activeIndex, setActiveIndex] = useState<number | null>(null)
+	const [wakeLock, setWakeLock] = useState<IWakeLock | null>(null)
+
+	function getLock() {
+		if(wakeLock == null) {
+			if('wakeLock' in navigator) {
+				console.log('Requesting WakeLock')
+				// @ts-ignore
+				navigator.wakeLock.request('screen')
+					.then((lock: IWakeLock) => {
+						lock.addEventListener('release', () => {
+							console.log('Lock released')
+							setWakeLock(null)
+						})
+						setWakeLock(lock)
+					})
+					.catch(console.error)
+			} else {
+				console.log('WakeLock not supported')
+			}
+		}
+	}
+
 	return (
 		<section className="main section">
 			<h1>㊙️💪🔥🧗‍♂️</h1>
@@ -100,6 +127,12 @@ export default function Warmup() {
 					<ExerciseCard 
 						active={activeIndex === i}
 						onClick={(e) => {
+							if(i === activeIndex) {
+								setActiveIndex(null)
+								wakeLock?.release()
+								return 
+							}
+							getLock()
 							e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'center' })
 							setActiveIndex(i)
 						}} 
