@@ -9,6 +9,7 @@
 
   // Shadow
   --shadow-color: hsl(0,0%, 0%);
+  --shadow: none;
 
   --selection-color: hsl(60, 0%, 17%);
   --heading: white;
@@ -46,6 +47,7 @@ $breakpoint-tablet: 800px;
     --card-color: hsl(0,0%,10%);
 
     --shadow-color: hsl(0,0%, 80%);
+    --shadow: 0px 0px 296px -60px rgba(0, 0, 0, 0.1);
 
     --selection-color: #fff9a8;
     --heading: black;

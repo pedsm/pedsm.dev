@@ -25,6 +25,7 @@
 	border-radius: 20px;
 	padding: 1em;
 	color: var(--card-color);
+	box-shadow: var(--shadow);
 }
 
 /* Monopoly */
@@ -52,10 +53,15 @@
 .poker {
 	grid-area: poker;
 	display: grid;
-	grid-template-rows: 160px min-content min-content;
+	grid-template-rows: 160px auto;
+	h3 {
+		font-family: 'Anton';
+		font-size: 32px;
+		font-weight: 400;
+	}
 	& > .canvas {
 		margin: auto;
-		margin: 0 -12px;
+		margin: 8px -12px;
 		display: flex;
 		justify-content: center;
 		& > {
@@ -63,6 +69,9 @@
 				margin-right: -12px;
 			}
 		}
+	}
+	& > .bottom {
+		margin-top: auto;
 	}
 }
 .delay-100 {
@@ -85,6 +94,7 @@
 	height: 130px;
 	width: 90px;
 	border-radius: 6px;
+	user-select: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -134,7 +144,7 @@
 		width: 100%;
 		padding: 20px;
 		padding-top: 90px;
-		background: linear-gradient(rgba(0,0,0,0), var(--background));
+		background: linear-gradient(rgba(0,0,0,0), var(--background) 80%);
 
 		& > h3 {
 			font-family: 'Anton';
