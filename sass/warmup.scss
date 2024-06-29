@@ -1,5 +1,6 @@
 .exercises-container {
 	display: grid;
+	overflow: visible;
 	grid-template-columns: 1fr;
 	gap: var(--space-400);
 }
@@ -31,6 +32,9 @@ html {
 	background: var(--background-card);
 	padding: var(--space-300);
 	border-radius: var(--space-200);
+
+	box-shadow: var(--shadow);
+	border: 1px solid var(--card-border);
 	
 	height: calc(60vh - var(--space-1600));
 	

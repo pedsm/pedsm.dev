@@ -1,0 +1,166 @@
+.bento {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, 296px);
+	grid-template-areas: 
+		"guilds"
+		"poker"
+		"monopoly";
+	gap: 1em;
+}
+
+@media screen and (min-width: $breakpoint-tablet){
+	.bento { 
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 296px);
+		grid-template-areas: 
+			"monopoly monopoly poker"
+			"guilds guilds guilds";
+	}
+}
+
+.bento > .item {
+	background-color: var(--background-card);	
+	border: 1px solid var(--card-border);
+	border-radius: 20px;
+	padding: 1em;
+	color: var(--card-color);
+	box-shadow: var(--shadow);
+}
+
+/* Monopoly */
+
+.monopoly {
+	grid-area: monopoly;
+	text-align: center;
+	display: grid;
+	grid-template-rows: auto min-content;
+	& > h3 {
+		@media (max-width: $breakpoint-tablet) {
+			font-size: 52px;
+		}
+		margin: auto;
+		font-size: 68px; 
+		color: var(--data-color-1);
+		text-transform: uppercase;
+		font-family: 'Impact';
+		text-shadow: var(--data-color-1-alpha) 1px 0 30px;
+	}
+}
+
+/* Poker */
+
+.poker {
+	grid-area: poker;
+	display: grid;
+	grid-template-rows: 160px auto;
+	h3 {
+		font-family: 'Anton';
+		font-size: 32px;
+		font-weight: 400;
+	}
+	& > .canvas {
+		margin: auto;
+		margin: 8px -12px;
+		display: flex;
+		justify-content: center;
+		& > {
+			.deck-card {
+				margin-right: -12px;
+			}
+		}
+	}
+	& > .bottom {
+		margin-top: auto;
+	}
+}
+.delay-100 {
+	rotate: -10deg;
+	animation-duration: 1s !important;
+}
+.delay-200 {
+	rotate: 7deg;
+	animation-duration: 1.2s !important;
+}
+.delay-300 {
+	rotate: 17deg;
+	position: relative;
+	top: 10px;
+	animation-duration: 1.8s !important;
+}
+
+.deck-card {
+	background-color: var(--background-card);
+	height: 130px;
+	width: 90px;
+	border-radius: 6px;
+	user-select: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: var(--shadow-color) 0px 0px 10px;
+	transition-duration: 0.2s;
+
+	&:hover {
+		transform: translateY(-10px);
+	}
+}
+
+.card-throw {
+	animation: throw-in;
+	animation-duration: 1s;
+}
+
+@keyframes throw-in {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) rotate(3deg)
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+				opacity: 1;
+        transform: translate(0)
+    }
+}
+
+/* Guilds */
+.guilds {
+	grid-area: guilds;
+	background-image: url('/guilds_guys.png');
+	background-position-x: 0%;
+	animation: bg-slide infinite linear;
+	animation-duration: 50s;
+	position: relative;
+	overflow: hidden;
+
+	& > div {
+		position: absolute;
+		bottom: 0;
+		margin: 0 -18px;
+		width: 100%;
+		padding: 20px;
+		padding-top: 90px;
+		background: linear-gradient(rgba(0,0,0,0), var(--background) 80%);
+
+		& > h3 {
+			font-family: 'Anton';
+			font-weight: 400;
+			font-size: 48px;
+		}
+	}
+}
+
+@keyframes bg-slide {
+	0% {
+		background-position-x: 0;
+	}
+	100% {
+		background-position-x: -1566px;
+	}
+	
+}
+

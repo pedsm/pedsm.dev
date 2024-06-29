@@ -1,36 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 * {
   font-display: swap;
 }
 
-p {
+body {
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
   color: var(--text);
 }
 
-body {
-  font-size: 18px;
-  font-family: Helvetica, sans-serif;
-}
-
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Nunito', sans-serif;
   color: var(--heading);
-  font-weight: 600;
-  margin: 0; 
+  margin: 0;
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 36px;
+  font-weight: 400;
+  font-family: 'Anton', sans-serif;
 }
 
 h2 {
-  font-size: 36px;
+  font-size: 24px;
 }
 
 p {
   font-weight: 400;
+  margin: 0.2em 0;
+  color: var(--text);
 }
 
 
@@ -41,7 +41,6 @@ h1,h2,h3 {
 }
 
 a {
-  font-family: 'Nunito', sans-serif;
   color: var(--heading);
   text-decoration: none;
 }
