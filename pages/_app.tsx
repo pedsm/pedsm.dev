@@ -3,6 +3,7 @@ import Navbar from '/components/navbar'
 import Footer from '/components/footer'
 import { useTheme } from '/hooks/theme'
 
+import './taste/taste.scss'
 import '../sass/main.scss'
 import { AppProps } from 'next/app'
 

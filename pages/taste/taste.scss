@@ -1,0 +1,11 @@
+.highlight {
+	background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=06402B);
+	margin: -2px -6px;
+	padding: 2px 6px;
+}
+
+@media (prefers-color-scheme: light) {
+	.highlight {
+		background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=90EE90);
+	}
+}
