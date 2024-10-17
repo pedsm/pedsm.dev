@@ -27,6 +27,8 @@ export default function app({ Component, pageProps, router }: AppProps) {
 
           <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
           <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+
 
           <meta name="Description" content="Hi I am Pedro and this is my personal page, a home for all my work"/>
           <meta charSet="utf-8" />
