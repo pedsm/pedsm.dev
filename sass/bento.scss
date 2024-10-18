@@ -48,6 +48,23 @@
 	}
 }
 
+.flicker{
+	// Not yet but maybe later
+	// animation: flicker 10s linear infinite;
+}
+  
+@keyframes flicker {
+	0%, 19.999%, 21%, 100% {
+		text-shadow: var(--data-color-1-alpha) 1px 0 30px;
+		
+	}
+	20%, 20.999% {
+		text-shadow: var(--data-color-1-alpha) 1px 0 10px;
+	}
+}
+  
+
+
 /* Poker */
 
 .poker {

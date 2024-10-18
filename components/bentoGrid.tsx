@@ -3,7 +3,7 @@ export default function BentoGrid() {
 	return (
 		<div className="section bento">
 			<a className="monopoly item" href="https://monopoly.pedsm.dev/" target="_blank">
-				<h3>Monopoly mastermind</h3>
+				<h3 className="flicker">Monopoly mastermind</h3>
 				<p>The perfect time waster</p>
 			</a>
 			<a href="https://pl-poker.io" target="_blank" className="poker item">
