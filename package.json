@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/pedsm/pedsm.dev#readme",
   "dependencies": {
+    "@tanstack/react-query": "^5.64.0",
     "axios": "^1.5.1",
     "image-size": "^1.0.0",
     "jimp": "^0.16.1",

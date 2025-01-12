@@ -1,6 +1,6 @@
 input, textarea {
     font-size: 18px;
-    border-radius: 4px;
+    border-radius: 8px;
     border: 1px solid var(--card-border);
     padding: 8px;
     flex-grow: 1;
@@ -8,11 +8,17 @@ input, textarea {
 
 button {
     font-size: 18px;
-    border-radius: 4px;
+    font-family: "__GeistSans_ac79ff", "__GeistSans_Fallback_ac79ff", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+    border-radius: 8px;
     border: none;
-    padding: 8px 16px;
-    background-color: var(--data-color-2);
+    padding: 12px 16px;
+    background-color: var(--button-color);
     font-weight: 600;
     color: var(--background);
     cursor: pointer;
+    transition: filter 0.2s ease-in-out;
+}
+
+button:hover {
+    filter: brightness(1.2);
 }
