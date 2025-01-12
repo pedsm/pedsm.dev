@@ -35,6 +35,9 @@ export default function Rungne() {
 		<p>For example you can generate a link to Magdust that when clicked will pre-apply your code on the checkout page.</p>
 		<p>This is a random tool I made for myself so I can't guarantee it will work 100% of the time, but it should work most of the time. Test it out yourself by opening the link in a new incognito window and seeing if the discount code is auto applied on checkout.</p>
 
+		<p>If you like the tool drop me a follow and like on instagram</p> 
+		<a style={{padding: '10px', backgroundImage: 'linear-gradient(to right top, rgb(253, 141, 50), rgb(163, 7, 186))', borderRadius: '8px', textDecoration: 'none', color: 'white', textAlign: 'center'}} href="https://www.instagram.com/pedsm.betamax/" target="_blank" rel="noopener noreferrer">pedsm.betamax</a>
+
 		<input type="text" placeholder="Link to product (e.g. https://rungne.com/en-gb/products/maglock-75g)" value={productLink} onChange={(e) => setProductLink(e.target.value)} />
 		<input type="text" placeholder="Your affiliate code (e.g. BETAMAX)" value={code} onChange={(e) => setCode(e.target.value)} />
 		<button disabled={isPending} onClick={() => mutate({ productLink, code })}>{isPending ? 'Generating...' : 'Generate'}</button>
