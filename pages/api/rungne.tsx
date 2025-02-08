@@ -1,56 +1,63 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import axios from 'axios'
 
 export type RungneRequest = {
-  productLink: string
-  code: string
+	productLink: string
+	code: string
 }
 
 export type RungneResponse = {
-  success: boolean
-  affiliateProductLink: string
+	success: boolean
+	affiliateProductLink: string
 }
 
+const getProductRedirect = (productLink: string) => {
+	const url = new URL(productLink)
+	const queryParams = new URLSearchParams()
+	queryParams.set('redirect', url.pathname)
+
+	return queryParams
+}
+
+const baseRungneLink = 'https://rungne.com/discount/'
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  // Only allow POST requests
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' })
-  }
+	// Only allow POST requests
 
-  try {
+
+	if (req.method !== 'POST') {
+		return res.status(405).json({ error: 'Method not allowed' })
+	}
+
+	try {
 		console.log('Request body', req.body)
-    const { productLink, code } = req.body as RungneRequest
+		const { productLink, code } = req.body as RungneRequest
 
-    // Validate required fields
-    if (!productLink || !code) {
-      return res.status(400).json({ success: false, message: 'Something went wrong' })
-    }
-		console.log('Going to fetch code')
-		const response = await axios.get(`https://rungne.com/${code}`, {
-			maxRedirects: 5
-		})
-		const resultingUrl = response.request.res.responseUrl
-		const queryParams = new URLSearchParams(resultingUrl.split('?')[1])
-		if(queryParams.get('snowball') == null) {
-			return res.status(400).json({ error: 'We couldn\'t make a link for you make sure you entered a valid affiliate code.' })
+		// Validate required fields
+		if (!code) {
+			return res.status(400).json({ success: false, message: 'Something went wrong' })
 		}
 
-		console.log('Code fetched', queryParams)
+		if(productLink == null || productLink == '') {
+			console.log('No product link provided, generating direct link')
+			const rungneResponse: RungneResponse = {
+				success: true,
+				affiliateProductLink: `${baseRungneLink}${code}`,
+			}
 
-		const productUrl = new URL(productLink)
-		for (const [key, value] of queryParams.entries()) {
-			productUrl.searchParams.set(key, value)
+			return res.status(200).json(rungneResponse)
 		}
-		console.log('Product URL', productUrl.toString())
 
+		const productRedirect = getProductRedirect(productLink)
 		const rungneResponse: RungneResponse = {
 			success: true,
-			affiliateProductLink: productUrl.toString()
+			affiliateProductLink: `${baseRungneLink}${code}/?${productRedirect.toString()}`,
 		}
-    return res.status(200).json(rungneResponse)
 
-  } catch (error) {
-    console.error('Error processing rungne request:', error)
-    return res.status(500).json({ error: 'Internal server error' })
-  }
+
+		return res.status(200).json(rungneResponse)
+
+	} catch (error) {
+		console.error('Error processing rungne request:', error)
+		return res.status(500).json({ error: 'Internal server error' })
+	}
 }
