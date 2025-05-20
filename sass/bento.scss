@@ -72,9 +72,9 @@
 	display: grid;
 	grid-template-rows: 160px auto;
 	h3 {
-		font-family: 'Anton';
+		font-family: 'League Spartan';
 		font-size: 32px;
-		font-weight: 400;
+		font-weight: 800;
 	}
 	& > .canvas {
 		margin: auto;
@@ -164,8 +164,8 @@
 		background: linear-gradient(rgba(0,0,0,0), var(--background) 80%);
 
 		& > h3 {
-			font-family: 'Anton';
-			font-weight: 400;
+			font-family: 'League Spartan';
+			font-weight: 800;
 			font-size: 48px;
 		}
 	}

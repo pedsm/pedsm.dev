@@ -3,6 +3,7 @@ import Navbar from '/components/navbar'
 import Footer from '/components/footer'
 import { useTheme } from '/hooks/theme'
 
+import '../styles/tailwind.css'
 import './taste/taste.scss'
 import '../sass/main.scss'
 import { AppProps } from 'next/app'
@@ -53,13 +54,15 @@ export default function app({ Component, pageProps, router }: AppProps) {
         <meta name="twitter:image:alt" content="Hi" />
         <script type="text/javascript" src="/startWorker.js"></script>
       </Head>
-      <header className="section">
-        <Navbar />
-      </header>
-      <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
-      </QueryClientProvider>
-      <Footer />
+      <div className={theme === 'dark' ? 'dark' : ''}>
+        <header className="section">
+          <Navbar />
+        </header>
+        <QueryClientProvider client={queryClient}>
+            <Component {...pageProps} />
+        </QueryClientProvider>
+        <Footer />
+      </div>
     </>
   )
 }

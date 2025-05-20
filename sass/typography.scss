@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=League+Spartan:wght@100..900&display=swap');
 
 * {
   font-display: swap;
@@ -17,10 +17,14 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
+.header {
+  font-family: 'League Spartan', sans-serif;
+}
+
 h1 {
   font-size: 36px;
-  font-weight: 400;
-  font-family: 'Anton', sans-serif;
+  font-weight: 800;
+  font-family: 'League Spartan', sans-serif;
 }
 
 h2 {
